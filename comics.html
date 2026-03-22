@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visual narratives, comics, and digital art - SteamedAndBaked">
+    <meta name="keywords" content="comics, visual art, digital art, cyberpunk art, experimental art">
+    
+    <title>Comics & Art | SteamedAndBaked</title>
+    
+    <!-- Cyberpunk Stylesheet -->
+    <link rel="stylesheet" href="/css/cyberpunk.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Comics & Art | SteamedAndBaked">
+    <meta property="og:description" content="Visual narratives, comics, and digital art in a dark cyberpunk aesthetic">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://steamedandbaked.net/comics.html">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</a>
+            
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/fiction.html" class="nav-link">Fiction</a></li>
+                <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
+                <li><a href="/comics.html" class="nav-link active">Comics</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title text-gradient">
+                <i class="fas fa-image" style="color: var(--neon-purple);"></i>
+                Comics & Visual Art
+            </h1>
+            <p class="page-subtitle">
+                Sequential narratives and experimental visual storytelling in the neon dark
+            </p>
+        </div>
+    </section>
+
+    <!-- Comics Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Comic 1 -->
+                <article class="content-item">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 50%, #bf00ff 100%); height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--neon-purple);">
+                            <i class="fas fa-image" style="font-size: 4rem; opacity: 0.3;"></i>
+                            <p style="margin-top: var(--space-2); opacity: 0.5;">Cover Preview</p>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> Comic Series</span>
+                        <h3 style="color: var(--neon-purple); margin-bottom: var(--space-2);">Neon Void Chronicles</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 22, 2026</span>
+                            <span><i class="fas fa-book-open"></i> Issue #1</span>
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            A six-panel exploration of consciousness fragmentation in digital spaces. Follow the Wanderer as they navigate through abandoned server farms searching for lost memories.
+                        </p>
+                        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                            <span class="tag">Sci-Fi</span>
+                            <span class="tag">6 Panels</span>
+                            <span class="tag">Series</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Comic 2 -->
+                <article class="content-item">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #1a1a24 0%, #252538 50%, #00ffff 100%); height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--neon-cyan);">
+                            <i class="fas fa-image" style="font-size: 4rem; opacity: 0.3;"></i>
+                            <p style="margin-top: var(--space-2); opacity: 0.5;">Cover Preview</p>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> One-Shot</span>
+                        <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-2);">Static Dreams</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 20, 2026</span>
+                            <span><i class="fas fa-book-open"></i> Single Page</span>
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            A single-page visual narrative exploring the intersection of sleep and digital interference. What happens when our dreams start buffering?
+                        </p>
+                        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                            <span class="tag">Dreams</span>
+                            <span class="tag">One-Shot</span>
+                            <span class="tag">Experimental</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Comic 3 -->
+                <article class="content-item">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #252538 0%, #1f1f2e 50%, #ff00ff 100%); height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--neon-magenta);">
+                            <i class="fas fa-image" style="font-size: 4rem; opacity: 0.3;"></i>
+                            <p style="margin-top: var(--space-2); opacity: 0.5;">Cover Preview</p>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> Visual Story</span>
+                        <h3 style="color: var(--neon-magenta); margin-bottom: var(--space-2);">The Last Upload</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 18, 2026</span>
+                            <span><i class="fas fa-book-open"></i> 4 Panels</span>
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            Four panels documenting humanity's final moments before digital transcendence. A meditation on identity, loss, and transformation.
+                        </p>
+                        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                            <span class="tag">Post-Human</span>
+                            <span class="tag">Philosophy</span>
+                            <span class="tag">4 Panels</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Comic 4 -->
+                <article class="content-item">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 50%, #ff0080 100%); height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--neon-pink);">
+                            <i class="fas fa-image" style="font-size: 4rem; opacity: 0.3;"></i>
+                            <p style="margin-top: var(--space-2); opacity: 0.5;">Cover Preview</p>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> Comic Strip</span>
+                        <h3 style="color: var(--neon-pink); margin-bottom: var(--space-2);">Glitch Life</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 16, 2026</span>
+                            <span><i class="fas fa-book-open"></i> 3 Panels</span>
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            A three-panel comic strip about living with reality glitches. Sometimes the bugs in the simulation aren't bugs—they're features.
+                        </p>
+                        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                            <span class="tag">Humor</span>
+                            <span class="tag">Glitch</span>
+                            <span class="tag">Strip</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Comic 5 -->
+                <article class="content-item">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #1a1a24 0%, #252538 50%, #00ff41 100%); height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--neon-green);">
+                            <i class="fas fa-image" style="font-size: 4rem; opacity: 0.3;"></i>
+                            <p style="margin-top: var(--space-2); opacity: 0.5;">Cover Preview</p>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> Art Series</span>
+                        <h3 style="color: var(--neon-green); margin-bottom: var(--space-2);">Terminal Portraits</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 14, 2026</span>
+                            <span><i class="fas fa-palette"></i> Digital Art</span>
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            A series of portrait studies rendered entirely in ASCII characters and terminal colors. Faces emerging from command-line chaos.
+                        </p>
+                        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                            <span class="tag">ASCII Art</span>
+                            <span class="tag">Portraits</span>
+                            <span class="tag">Series</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Comic 6 -->
+                <article class="content-item">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #252538 0%, #1f1f2e 50%, #0080ff 100%); height: 300px; display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; color: var(--neon-blue);">
+                            <i class="fas fa-image" style="font-size: 4rem; opacity: 0.3;"></i>
+                            <p style="margin-top: var(--space-2); opacity: 0.5;">Cover Preview</p>
+                        </div>
+                    </div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> Graphic Novel</span>
+                        <h3 style="color: var(--neon-blue); margin-bottom: var(--space-2);">Bandwidth</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 12, 2026</span>
+                            <span><i class="fas fa-book-open"></i> Chapter 1</span>
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+                            First chapter of an ongoing graphic novel about data couriers in a post-net world. When the internet died, information became physical again.
+                        </p>
+                        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                            <span class="tag">Ongoing</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Cyberpunk</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="section" style="background: var(--bg-tertiary); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <h2 class="text-gradient text-center" style="margin-bottom: var(--space-8);">Works in Progress</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6);">
+                <!-- WIP 1 -->
+                <div class="card" style="text-align: center; padding: var(--space-6);">
+                    <i class="fas fa-pencil-alt" style="font-size: 2rem; color: var(--neon-cyan); margin-bottom: var(--space-4);"></i>
+                    <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-2);">Memory Cache</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                        An experimental comic exploring digital memory and nostalgia through fragmented panels.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: var(--space-2);">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </p>
+                </div>
+
+                <!-- WIP 2 -->
+                <div class="card" style="text-align: center; padding: var(--space-6);">
+                    <i class="fas fa-paint-brush" style="font-size: 2rem; color: var(--neon-magenta); margin-bottom: var(--space-4);"></i>
+                    <h3 style="color: var(--neon-magenta); margin-bottom: var(--space-2);">Neon Sketches</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                        Daily digital sketches capturing the aesthetic of late-night coding sessions and urban decay.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: var(--space-2);">
+                        <i class="fas fa-clock"></i> In Progress
+                    </p>
+                </div>
+
+                <!-- WIP 3 -->
+                <div class="card" style="text-align: center; padding: var(--space-6);">
+                    <i class="fas fa-code" style="font-size: 2rem; color: var(--neon-purple); margin-bottom: var(--space-4);"></i>
+                    <h3 style="color: var(--neon-purple); margin-bottom: var(--space-2);">Code Comics</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                        Visual stories told through code snippets, errors, and console outputs. Programming as narrative.
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: var(--space-2);">
+                        <i class="fas fa-clock"></i> Concept Stage
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="text-gradient" style="margin-bottom: var(--space-4);">Explore More Content</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-6); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Visual narratives are just one dimension. Dive deeper into the written word.
+            </p>
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                <a href="/fiction.html" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Read Fiction
+                </a>
+                <a href="/poetry.html" class="btn btn-secondary">
+                    <i class="fas fa-feather"></i> Read Poetry
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-2);">STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</h3>
+                    <p style="color: var(--text-secondary);">Experimental creative work in the digital void</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/fiction.html">Fiction</a>
+                    <a href="/poetry.html">Poetry</a>
+                    <a href="/comics.html">Comics</a>
+                    <a href="/about.html">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SteamedAndBaked. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
