@@ -1,207 +1,201 @@
 /**
- * Steamed and Baked - Main JavaScript
- * Version: 1.0
+ * SteamedAndBaked.com v3.0 - Cyberpunk Edition
+ * Main JavaScript functionality
  */
 
 (function() {
     'use strict';
     
-    // DOM Elements
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const currentYearElements = document.querySelectorAll('#current-year');
+    // ========================================
+    // INITIALIZATION
+    // ========================================
     
-    /**
-     * Initialize application
-     */
     function init() {
-        setupMobileNavigation();
+        setupNavigation();
         setCurrentYear();
-        setupSmoothScrolling();
-        setupFormValidation();
-        initAnimations();
+        setupScrollEffects();
+        setupCardHoverEffects();
+        setupGlitchEffect();
+        initializeAnimations();
     }
     
-    /**
-     * Setup mobile navigation toggle
-     */
-    function setupMobileNavigation() {
+    // ========================================
+    // NAVIGATION
+    // ========================================
+    
+    function setupNavigation() {
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
+            navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
-                
-                // Update aria-expanded attribute
-                const isExpanded = navMenu.classList.contains('active');
-                navToggle.setAttribute('aria-expanded', isExpanded);
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
-                
-                if (!isClickInsideNav && navMenu.classList.contains('active')) {
-                    navMenu.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false');
+                const icon = navToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
                 }
             });
             
-            // Close menu on escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+            // Close menu on link click
+            const navLinks = navMenu.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
-                    navToggle.setAttribute('aria-expanded', 'false');
+                    const icon = navToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
+                });
+            });
+            
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.add('fa-bars');
+                        icon.classList.remove('fa-times');
+                    }
                 }
             });
         }
-    }
-    
-    /**
-     * Set current year in footer
-     */
-    function setCurrentYear() {
-        const currentYear = new Date().getFullYear();
-        currentYearElements.forEach(element => {
-            element.textContent = currentYear;
-        });
-    }
-    
-    /**
-     * Setup smooth scrolling for anchor links
-     */
-    function setupSmoothScrolling() {
+        
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                
-                // Skip if href is just "#"
-                if (href === '#') {
+                if (href !== '#' && href.length > 1) {
                     e.preventDefault();
-                    return;
-                }
-                
-                const targetId = href.substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    e.preventDefault();
-                    
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    
-                    // Update URL without jumping
-                    history.pushState(null, null, href);
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
     }
     
-    /**
-     * Setup form validation
-     */
-    function setupFormValidation() {
-        const contactForm = document.getElementById('contact-form');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+    // ========================================
+    // UTILITY FUNCTIONS
+    // ========================================
+    
+    function setCurrentYear() {
+        const yearElements = document.querySelectorAll('#current-year');
+        const currentYear = new Date().getFullYear();
+        yearElements.forEach(el => el.textContent = currentYear);
+    }
+    
+    // ========================================
+    // SCROLL EFFECTS
+    // ========================================
+    
+    function setupScrollEffects() {
+        // Navbar transparency on scroll
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
                 
-                // Get form data
-                const formData = new FormData(contactForm);
-                const data = {};
-                formData.forEach((value, key) => {
-                    data[key] = value;
-                });
-                
-                // Validate form
-                if (validateContactForm(data)) {
-                    // In a real implementation, this would send data to a server
-                    console.log('Form data:', data);
-                    
-                    // Show success message
-                    showNotification('Message sent successfully!', 'success');
-                    
-                    // Reset form
-                    contactForm.reset();
-                    
-                    // Redirect to thank you page (optional)
-                    setTimeout(() => {
-                        window.location.href = '/thank-you.html';
-                    }, 1000);
+                if (currentScroll > 100) {
+                    navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+                    navbar.style.backdropFilter = 'blur(20px)';
                 } else {
-                    showNotification('Please fill out all required fields correctly.', 'error');
+                    navbar.style.background = 'rgba(10, 10, 15, 0.9)';
+                    navbar.style.backdropFilter = 'blur(10px)';
                 }
+                
+                lastScroll = currentScroll;
+            });
+        }
+        
+        // Parallax effect on hero
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = scrolled * 0.5;
+                hero.style.transform = `translateY(${parallax}px)`;
             });
         }
     }
     
-    /**
-     * Validate contact form data
-     */
-    function validateContactForm(data) {
-        // Check required fields
-        if (!data.name || !data.email || !data.subject || !data.message) {
-            return false;
-        }
+    // ========================================
+    // CARD HOVER EFFECTS
+    // ========================================
+    
+    function setupCardHoverEffects() {
+        const cards = document.querySelectorAll('.card, .content-item');
         
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            return false;
-        }
-        
-        // Validate message length
-        if (data.message.length < 10) {
-            return false;
-        }
-        
-        return true;
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+            
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
     }
     
-    /**
-     * Show notification message
-     */
-    function showNotification(message, type = 'info') {
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `notification notification-${type}`;
-        notification.textContent = message;
-        notification.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            background-color: ${type === 'success' ? '#27ae60' : type === 'error' ? '#e74c3c' : '#3498db'};
-            color: white;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-        `;
+    // ========================================
+    // GLITCH EFFECT
+    // ========================================
+    
+    function setupGlitchEffect() {
+        const glitchElements = document.querySelectorAll('.glitch');
         
-        document.body.appendChild(notification);
-        
-        // Remove notification after 3 seconds
-        setTimeout(() => {
-            notification.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => {
-                document.body.removeChild(notification);
-            }, 300);
-        }, 3000);
+        glitchElements.forEach(element => {
+            const text = element.textContent;
+            element.setAttribute('data-text', text);
+            
+            // Random glitch trigger
+            setInterval(() => {
+                if (Math.random() > 0.95) {
+                    element.style.animation = 'none';
+                    setTimeout(() => {
+                        element.style.animation = 'glitch 0.3s infinite';
+                        setTimeout(() => {
+                            element.style.animation = 'glitch 2s infinite';
+                        }, 300);
+                    }, 10);
+                }
+            }, 2000);
+        });
     }
     
-    /**
-     * Initialize scroll animations
-     */
-    function initAnimations() {
-        // Intersection Observer for fade-in animations
+    // ========================================
+    // INTERSECTION OBSERVER ANIMATIONS
+    // ========================================
+    
+    function initializeAnimations() {
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
         
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in');
@@ -210,92 +204,213 @@
             });
         }, observerOptions);
         
-        // Observe elements with animation classes
-        document.querySelectorAll('.feature-card, .value-card, .team-member').forEach(element => {
+        // Observe cards and content items
+        document.querySelectorAll('.card, .content-item').forEach(element => {
             element.style.opacity = '0';
             observer.observe(element);
         });
     }
     
-    /**
-     * Lazy load images
-     */
-    function lazyLoadImages() {
-        const images = document.querySelectorAll('img[loading="lazy"]');
+    // ========================================
+    // NEON CURSOR EFFECT (Optional)
+    // ========================================
+    
+    function createCursorEffect() {
+        const cursor = document.createElement('div');
+        cursor.style.cssText = `
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: screen;
+            opacity: 0.5;
+            transition: transform 0.2s ease;
+        `;
+        document.body.appendChild(cursor);
         
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src || img.src;
-                        img.classList.add('loaded');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+        
+        document.addEventListener('mousedown', () => {
+            cursor.style.transform = 'scale(1.5)';
+            cursor.style.boxShadow = '0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan)';
+        });
+        
+        document.addEventListener('mouseup', () => {
+            cursor.style.transform = 'scale(1)';
+            cursor.style.boxShadow = 'none';
+        });
+    }
+    
+    // ========================================
+    // TYPING EFFECT (For hero subtitle)
+    // ========================================
+    
+    function typeWriter(element, text, speed = 50) {
+        let i = 0;
+        element.textContent = '';
+        element.style.opacity = '1';
+        
+        function type() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        
+        type();
+    }
+    
+    // ========================================
+    // KEYBOARD SHORTCUTS
+    // ========================================
+    
+    function setupKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + K for quick search (future feature)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                console.log('Quick search triggered (future feature)');
+            }
             
-            images.forEach(img => imageObserver.observe(img));
-        } else {
-            // Fallback for browsers that don't support IntersectionObserver
-            images.forEach(img => {
-                img.src = img.dataset.src || img.src;
+            // Escape to close modals/menus
+            if (e.key === 'Escape') {
+                const activeMenu = document.querySelector('.nav-menu.active');
+                if (activeMenu) {
+                    activeMenu.classList.remove('active');
+                }
+            }
+        });
+    }
+    
+    // ========================================
+    // RANDOM GLITCH TEXT
+    // ========================================
+    
+    function glitchText(element) {
+        const chars = '!<>-_\\/[]{}—=+*^?#________';
+        const originalText = element.textContent;
+        let iterations = 0;
+        
+        const interval = setInterval(() => {
+            element.textContent = originalText
+                .split('')
+                .map((char, index) => {
+                    if (index < iterations) {
+                        return originalText[index];
+                    }
+                    return chars[Math.floor(Math.random() * chars.length)];
+                })
+                .join('');
+            
+            iterations += 1 / 3;
+            
+            if (iterations >= originalText.length) {
+                clearInterval(interval);
+                element.textContent = originalText;
+            }
+        }, 30);
+    }
+    
+    // ========================================
+    // PERFORMANCE MONITORING
+    // ========================================
+    
+    function monitorPerformance() {
+        if ('performance' in window && 'getEntriesByType' in window.performance) {
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const perfData = performance.timing;
+                    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                    const domContentLoadedTime = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+                    
+                    console.log(`%c🚀 Performance Metrics`, 'color: #00ffff; font-size: 14px; font-weight: bold;');
+                    console.log(`Page Load: ${pageLoadTime}ms`);
+                    console.log(`DOM Ready: ${domContentLoadedTime}ms`);
+                }, 0);
             });
         }
     }
     
-    /**
-     * Add CSS animations
-     */
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes slideOut {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease forwards;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    // ========================================
+    // EASTER EGGS
+    // ========================================
     
-    // Initialize on DOM ready
+    function setupEasterEggs() {
+        // Konami Code easter egg
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    activateEasterEgg();
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+    }
+    
+    function activateEasterEgg() {
+        document.body.style.animation = 'rainbow 2s linear infinite';
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes rainbow {
+                0% { filter: hue-rotate(0deg); }
+                100% { filter: hue-rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        setTimeout(() => {
+            document.body.style.animation = '';
+            style.remove();
+        }, 5000);
+        
+        console.log('%c🎉 EASTER EGG ACTIVATED!', 'color: #ff00ff; font-size: 20px; font-weight: bold;');
+    }
+    
+    // ========================================
+    // INIT ON DOM READY
+    // ========================================
+    
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
     
-    // Lazy load images
-    lazyLoadImages();
+    // Optional: Enable custom cursor
+    // Uncomment to activate
+    // createCursorEffect();
+    
+    // Setup keyboard shortcuts
+    setupKeyboardShortcuts();
+    
+    // Setup easter eggs
+    setupEasterEggs();
+    
+    // Monitor performance
+    monitorPerformance();
+    
+    // Expose some functions globally for debugging
+    window.SteamedAndBaked = {
+        glitchText,
+        version: '3.0',
+        aesthetic: 'cyberpunk'
+    };
+    
+    console.log('%cSteamedAndBaked v3.0', 'color: #00ffff; font-size: 24px; font-weight: bold; text-shadow: 0 0 10px #00ffff;');
+    console.log('%cDark Psychedelic Neon-Cyberpunk Aesthetic', 'color: #ff00ff; font-size: 12px;');
     
 })();

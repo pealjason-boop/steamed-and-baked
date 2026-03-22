@@ -3,155 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Steamed and Baked - our story, values, and commitment to quality">
-    <title>About Us | Steamed and Baked</title>
+    <meta name="description" content="About SteamedAndBaked - A digital showcase for experimental creative work">
+    <title>About | SteamedAndBaked</title>
     
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/cyberpunk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="/" class="logo-link">
-                    <img src="/images/logo.svg" alt="Steamed and Baked Logo" class="logo">
-                </a>
-            </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</a>
             
-            <button class="nav-toggle" aria-label="Toggle navigation menu" id="nav-toggle">
-                <span class="hamburger"></span>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
             </button>
             
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/about.html" class="nav-link active">About</a></li>
-                <li class="nav-item"><a href="/menu.html" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="/services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/fiction.html" class="nav-link">Fiction</a></li>
+                <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
+                <li><a href="/comics.html" class="nav-link">Comics</a></li>
+                <li><a href="/about.html" class="nav-link active">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="container">
-            <h1>About Steamed and Baked</h1>
-            <p class="page-subtitle">Our story, values, and commitment to excellence</p>
+    <!-- Hero -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-content">
+            <h1 class="hero-title" style="font-size: var(--text-4xl);">ABOUT THIS SPACE</h1>
+            <p class="hero-subtitle">Origin, purpose, and philosophy</p>
         </div>
-    </header>
+    </section>
 
-    <!-- Our Story Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="content-grid">
-                <div class="content-image">
-                    <img src="/images/our-story.jpg" alt="Our Story" loading="lazy">
-                </div>
-                <div class="content-text">
-                    <h2>Our Story</h2>
-                    <p>Founded with a passion for bringing together the best of both worlds, Steamed and Baked represents a unique fusion of traditional Asian steaming techniques and modern Western baking artistry.</p>
-                    <p>What started as a dream in a small kitchen has grown into a beloved destination for food enthusiasts who appreciate quality, authenticity, and innovation.</p>
-                    <p>Every day, we wake up excited to create products that bring joy to our customers' lives. Our commitment to excellence drives us to constantly improve and innovate while staying true to our roots.</p>
+    <!-- About Content -->
+    <section class="section">
+        <div class="container container-narrow">
+            <div class="card" style="padding: var(--space-12);">
+                <h2 class="text-gradient">What Is SteamedAndBaked?</h2>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                    <strong style="color: var(--primary);">SteamedAndBaked</strong> is a digital showcase for experimental creative work. 
+                    This space exists at the intersection of traditional narrative forms and contemporary digital aesthetics, 
+                    exploring themes of technology, consciousness, and the liminal spaces between realities.
+                </p>
+                
+                <h3 style="color: var(--neon-magenta); margin-top: var(--space-8);">
+                    <i class="fas fa-user-secret"></i> The Creator
+                </h3>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                    All content on this site is created by a single anonymous individual. The choice to remain anonymous 
+                    allows the work to speak for itself, free from the constraints of personal branding and algorithmic pressures.
+                </p>
+                
+                <h3 style="color: var(--neon-cyan); margin-top: var(--space-8);">
+                    <i class="fas fa-paint-brush"></i> Aesthetic Philosophy
+                </h3>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                    The visual design embraces a <strong style="color: var(--primary);">dark psychedelic neon-cyberpunk</strong> aesthetic. 
+                    This choice reflects the content's exploration of digital consciousness, technological alienation, and the beauty 
+                    found in synthetic environments. The glowing neon against deep darkness mirrors the contrast between 
+                    human creativity and machine logic.
+                </p>
+                
+                <h3 style="color: var(--neon-purple); margin-top: var(--space-8);">
+                    <i class="fas fa-book-open"></i> Content Approach
+                </h3>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                    The work here prioritizes:
+                </p>
+                <ul style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 2; margin-left: var(--space-8);">
+                    <li><i class="fas fa-check" style="color: var(--neon-cyan);"></i> Experimentation over convention</li>
+                    <li><i class="fas fa-check" style="color: var(--neon-magenta);"></i> Authenticity over engagement metrics</li>
+                    <li><i class="fas fa-check" style="color: var(--neon-purple);"></i> Depth over viral potential</li>
+                    <li><i class="fas fa-check" style="color: var(--neon-green);"></i> Community over audience</li>
+                </ul>
+                
+                <h3 style="color: var(--neon-green); margin-top: var(--space-8);">
+                    <i class="fas fa-users"></i> Community Engagement
+                </h3>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                    This space welcomes anonymous participation and genuine dialogue. Comments and discussions are encouraged, 
+                    with moderation focused on maintaining quality discourse rather than maximizing engagement.
+                </p>
+                
+                <h3 style="color: var(--neon-orange); margin-top: var(--space-8);">
+                    <i class="fas fa-code"></i> Technical Details
+                </h3>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                    Built with modern web standards, this site prioritizes:
+                </p>
+                <ul style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 2; margin-left: var(--space-8);">
+                    <li><i class="fas fa-bolt" style="color: var(--neon-yellow);"></i> Performance and speed</li>
+                    <li><i class="fas fa-universal-access" style="color: var(--neon-cyan);"></i> Accessibility</li>
+                    <li><i class="fas fa-shield-alt" style="color: var(--neon-magenta);"></i> Privacy and security</li>
+                    <li><i class="fas fa-leaf" style="color: var(--neon-green);"></i> Minimal resource usage</li>
+                </ul>
+                
+                <div style="text-align: center; margin-top: var(--space-12);">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-arrow-left"></i> Return Home
+                    </a>
+                    <a href="/fiction.html" class="btn btn-secondary" style="margin-left: var(--space-4);">
+                        <i class="fas fa-book"></i> Browse Content
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission & Vision -->
-    <section class="mission-vision">
-        <div class="container">
-            <div class="mv-grid">
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To provide our community with the finest steamed and baked goods, crafted with premium ingredients, traditional techniques, and unwavering dedication to quality and customer satisfaction.</p>
-                </div>
-                
-                <div class="mv-card">
-                    <div class="mv-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Our Vision</h3>
-                    <p>To become the premier destination for artisanal steamed and baked products, known for innovation, quality, and a commitment to bringing people together through exceptional food experiences.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Values -->
-    <section class="values-section">
-        <div class="container">
-            <h2 class="section-title">Our Core Values</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <i class="fas fa-star"></i>
-                    <h4>Quality First</h4>
-                    <p>We never compromise on ingredient quality or craftsmanship</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-users"></i>
-                    <h4>Community Focus</h4>
-                    <p>Supporting local suppliers and building lasting relationships</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-recycle"></i>
-                    <h4>Sustainability</h4>
-                    <p>Committed to environmentally responsible practices</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Innovation</h4>
-                    <p>Constantly exploring new flavors and techniques</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Integrity</h4>
-                    <p>Transparent and honest in all our dealings</p>
-                </div>
-                
-                <div class="value-card">
-                    <i class="fas fa-smile"></i>
-                    <h4>Customer Joy</h4>
-                    <p>Every customer leaves happier than they arrived</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section (placeholder) -->
-    <section class="team-section">
-        <div class="container">
-            <h2 class="section-title">Meet Our Team</h2>
-            <p class="section-subtitle">The talented people behind Steamed and Baked</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="/images/team-member-1.jpg" alt="Team Member" loading="lazy">
-                    <h4>Chef Name</h4>
-                    <p class="team-role">Head Baker</p>
-                    <p class="team-bio">Expert in artisanal baking with over 15 years of experience.</p>
-                </div>
-                
-                <div class="team-member">
-                    <img src="/images/team-member-2.jpg" alt="Team Member" loading="lazy">
-                    <h4>Chef Name</h4>
-                    <p class="team-role">Master Steamer</p>
-                    <p class="team-bio">Trained in traditional Asian steaming techniques.</p>
-                </div>
-                
-                <div class="team-member">
-                    <img src="/images/team-member-3.jpg" alt="Team Member" loading="lazy">
-                    <h4>Manager Name</h4>
-                    <p class="team-role">Operations Manager</p>
-                    <p class="team-bio">Ensuring excellence in every customer experience.</p>
-                </div>
+    <!-- Contact CTA -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container container-narrow text-center">
+            <h2 class="text-gradient">Get In Touch</h2>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg); margin-bottom: var(--space-8);">
+                Questions, collaborations, or feedback? Reach out through these channels:
+            </p>
+            <div style="display: flex; gap: var(--space-6); justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:contact@steamedandbaked.com" class="btn btn-ghost">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="#" class="btn btn-ghost">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="/rss.xml" class="btn btn-ghost">
+                    <i class="fas fa-rss"></i> RSS Feed
+                </a>
             </div>
         </div>
     </section>
@@ -160,58 +138,55 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="footer-heading">Steamed and Baked</h4>
-                    <p class="footer-text">Your destination for the finest steamed and baked goods, crafted with passion and tradition.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                <div class="footer-section">
+                    <h4>STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</h4>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        A digital showcase for experimental fiction, poetry, and visual narratives.
+                    </p>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Quick Links</h4>
+                <div class="footer-section">
+                    <h4>Explore</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/fiction.html">Fiction</a></li>
+                        <li><a href="/poetry.html">Poetry</a></li>
+                        <li><a href="/comics.html">Comics & Art</a></li>
+                        <li><a href="/archive.html">Archive</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Info</h4>
+                    <ul class="footer-links">
                         <li><a href="/about.html">About</a></li>
-                        <li><a href="/menu.html">Menu</a></li>
-                        <li><a href="/services.html">Services</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/submit.html">Submit</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/rss.xml">RSS Feed</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, State 12345</li>
-                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@steamedandbaked.com</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-heading">Hours</h4>
-                    <ul class="footer-hours">
-                        <li><strong>Mon-Fri:</strong> 7:00 AM - 8:00 PM</li>
-                        <li><strong>Saturday:</strong> 8:00 AM - 9:00 PM</li>
-                        <li><strong>Sunday:</strong> 9:00 AM - 6:00 PM</li>
-                    </ul>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Steamed and Baked. All rights reserved.</p>
-                <ul class="footer-legal">
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms of Service</a></li>
-                </ul>
+                <p>&copy; <span id="current-year"></span> SteamedAndBaked. All content is original and protected.</p>
             </div>
         </div>
     </footer>
 
     <script src="/js/main.js"></script>
-    <script src="/js/error-logger.js"></script>
 </body>
 </html>

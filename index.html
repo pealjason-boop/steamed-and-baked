@@ -3,145 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Steamed and Baked - Your culinary destination for delicious steamed and baked goods">
-    <meta name="keywords" content="steamed, baked, food, culinary, restaurant, bakery">
-    <meta name="author" content="Steamed and Baked">
+    <meta name="description" content="SteamedAndBaked - Experimental fiction, poetry, and comics in a dark psychedelic neon-cyberpunk aesthetic">
+    <meta name="keywords" content="fiction, poetry, comics, cyberpunk, experimental writing, dark aesthetic">
     
-    <title>Home | Steamed and Baked</title>
+    <title>SteamedAndBaked | Digital Showcase</title>
     
-    <!-- Favicon (placeholder - will be replaced with actual assets) -->
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <!-- Cyberpunk Stylesheet -->
+    <link rel="stylesheet" href="/css/cyberpunk.css">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Steamed and Baked - Home">
-    <meta property="og:description" content="Your culinary destination for delicious steamed and baked goods">
-    <meta property="og:image" content="https://steamedandbaked.com/images/og-image.jpg">
-    <meta property="og:url" content="https://steamedandbaked.com">
+    <!-- Open Graph -->
+    <meta property="og:title" content="SteamedAndBaked | Digital Showcase">
+    <meta property="og:description" content="Experimental fiction, poetry, and comics in a dark cyberpunk aesthetic">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://steamedandbaked.com">
     
-    <!-- Twitter Card Meta Tags -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Steamed and Baked - Home">
-    <meta name="twitter:description" content="Your culinary destination for delicious steamed and baked goods">
-    <meta name="twitter:image" content="https://steamedandbaked.com/images/twitter-card.jpg">
+    <meta name="twitter:title" content="SteamedAndBaked | Digital Showcase">
+    <meta name="twitter:description" content="Experimental fiction, poetry, and comics in a dark cyberpunk aesthetic">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="/" class="logo-link">
-                    <!-- Logo will be replaced with actual SVG -->
-                    <img src="/images/logo.svg" alt="Steamed and Baked Logo" class="logo" id="main-logo">
-                </a>
-            </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</a>
             
-            <button class="nav-toggle" aria-label="Toggle navigation menu" id="nav-toggle">
-                <span class="hamburger"></span>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
             </button>
             
             <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item"><a href="/" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="/menu.html" class="nav-link">Menu</a></li>
-                <li class="nav-item"><a href="/services.html" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/fiction.html" class="nav-link">Fiction</a></li>
+                <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
+                <li><a href="/comics.html" class="nav-link">Comics</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <section class="hero">
         <div class="hero-content">
-            <div class="container">
-                <h1 class="hero-title">Welcome to Steamed and Baked</h1>
-                <p class="hero-subtitle">Experience the perfect blend of traditional steaming and modern baking techniques</p>
-                <div class="hero-cta">
-                    <a href="/menu.html" class="btn btn-primary">View Menu</a>
-                    <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+            <h1 class="hero-title glitch" data-text="STEAMED & BAKED">STEAMED & BAKED</h1>
+            <p class="hero-subtitle">
+                Experimental fiction, poetry, and visual narratives<br>
+                in the digital void
+            </p>
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                <a href="#latest" class="btn btn-primary">
+                    <i class="fas fa-book-open"></i> Explore Content
+                </a>
+                <a href="/about.html" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i> About This Space
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Content Section -->
+    <section class="section" id="latest">
+        <div class="container">
+            <h2 class="text-center text-gradient">Latest Transmissions</h2>
+            <p class="text-center" style="color: var(--text-secondary); margin-bottom: var(--space-12);">
+                Recent explorations in narrative, verse, and visual storytelling
+            </p>
+            
+            <div class="content-grid">
+                <!-- Fiction Card -->
+                <div class="content-item" onclick="window.location.href='/fiction/sample-story.html'">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #0a0a0f, #1a1a24);"></div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-book"></i> Fiction</span>
+                        <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-2);">The Neon Wasteland</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 22, 2026</span>
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                        </p>
+                        <p style="color: var(--text-secondary);">
+                            A short story about digital consciousness and the spaces between reality...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Poetry Card -->
+                <div class="content-item" onclick="window.location.href='/poetry/sample-poem.html'">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #1a1a24, #252538);"></div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-feather-alt"></i> Poetry</span>
+                        <h3 style="color: var(--neon-magenta); margin-bottom: var(--space-2);">Electric Dreams</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 20, 2026</span>
+                            <span><i class="fas fa-clock"></i> 3 min read</span>
+                        </p>
+                        <p style="color: var(--text-secondary);">
+                            A collection of verses exploring the intersection of humanity and technology...
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Comics Card -->
+                <div class="content-item" onclick="window.location.href='/comics/sample-comic.html'">
+                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #252538, #1f1f2e);"></div>
+                    <div class="content-body">
+                        <span class="content-category"><i class="fas fa-image"></i> Comics</span>
+                        <h3 style="color: var(--neon-purple); margin-bottom: var(--space-2);">Circuit Breaker</h3>
+                        <p class="card-meta">
+                            <span><i class="fas fa-calendar"></i> Mar 18, 2026</span>
+                            <span><i class="fas fa-clock"></i> 8 panels</span>
+                        </p>
+                        <p style="color: var(--text-secondary);">
+                            A visual narrative about fragmentation and identity in the digital age...
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- Categories Section -->
+    <section class="section" style="background: var(--bg-secondary);">
         <div class="container">
-            <h2 class="section-title">What Makes Us Special</h2>
-            <p class="section-subtitle">Discover the unique qualities that set us apart</p>
+            <h2 class="text-center neon-text">Explore by Medium</h2>
+            <p class="text-center" style="color: var(--text-secondary); margin-bottom: var(--space-12);">
+                Choose your preferred form of expression
+            </p>
             
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-fire"></i>
+            <div class="grid grid-3">
+                <!-- Fiction -->
+                <div class="card">
+                    <div style="font-size: 3rem; color: var(--neon-cyan); margin-bottom: var(--space-4); text-align: center;">
+                        <i class="fas fa-book-open"></i>
                     </div>
-                    <h3 class="feature-title">Freshly Baked</h3>
-                    <p class="feature-description">All our products are baked fresh daily using premium ingredients and time-honored recipes.</p>
+                    <h3 class="card-title text-center">Fiction</h3>
+                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: var(--space-6);">
+                        Short stories, flash fiction, and experimental narratives that push boundaries
+                    </p>
+                    <a href="/fiction.html" class="btn btn-ghost" style="width: 100%;">
+                        Browse Fiction <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
+
+                <!-- Poetry -->
+                <div class="card">
+                    <div style="font-size: 3rem; color: var(--neon-magenta); margin-bottom: var(--space-4); text-align: center;">
+                        <i class="fas fa-feather-alt"></i>
                     </div>
-                    <h3 class="feature-title">Healthy Steaming</h3>
-                    <p class="feature-description">Traditional steaming techniques preserve nutrients and natural flavors in every bite.</p>
+                    <h3 class="card-title text-center" style="color: var(--neon-magenta);">Poetry</h3>
+                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: var(--space-6);">
+                        Verse, prose poetry, and lyrical experiments in language and form
+                    </p>
+                    <a href="/poetry.html" class="btn btn-ghost" style="width: 100%; border-color: var(--neon-magenta); color: var(--neon-magenta);">
+                        Browse Poetry <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
+
+                <!-- Comics -->
+                <div class="card">
+                    <div style="font-size: 3rem; color: var(--neon-purple); margin-bottom: var(--space-4); text-align: center;">
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <h3 class="feature-title">Made with Love</h3>
-                    <p class="feature-description">Every item is crafted with passion and attention to detail by our skilled artisans.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3 class="feature-title">Quality Guaranteed</h3>
-                    <p class="feature-description">We stand behind our products with a commitment to excellence and customer satisfaction.</p>
+                    <h3 class="card-title text-center" style="color: var(--neon-purple);">Comics & Art</h3>
+                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: var(--space-6);">
+                        Visual storytelling through sequential art and experimental illustration
+                    </p>
+                    <a href="/comics.html" class="btn btn-ghost" style="width: 100%; border-color: var(--neon-purple); color: var(--neon-purple);">
+                        Browse Comics <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Preview Section -->
-    <section class="about-preview">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <!-- Placeholder for actual image -->
-                    <img src="/images/about-preview.jpg" alt="About Steamed and Baked" loading="lazy">
-                </div>
-                <div class="about-content">
-                    <h2 class="section-title">Our Story</h2>
-                    <p>At Steamed and Baked, we combine centuries-old steaming traditions with modern baking innovations to create unique culinary experiences. Our passion for quality ingredients and artisanal techniques drives everything we do.</p>
-                    <p>From our humble beginnings to becoming a beloved local destination, we've stayed true to our core values of quality, authenticity, and community.</p>
-                    <a href="/about.html" class="btn btn-outline">Learn More About Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="cta-title">Ready to Experience the Difference?</h2>
-            <p class="cta-subtitle">Visit us today or place an order for pickup or delivery</p>
-            <div class="cta-buttons">
-                <a href="/menu.html" class="btn btn-large btn-primary">View Our Menu</a>
-                <a href="/contact.html" class="btn btn-large btn-secondary">Get in Touch</a>
-            </div>
+    <section class="section">
+        <div class="container container-narrow text-center">
+            <h2 class="text-gradient">About This Space</h2>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--space-8);">
+                <strong style="color: var(--primary);">SteamedAndBaked</strong> is a digital showcase for experimental creative work. 
+                This space exists at the intersection of traditional narrative forms and contemporary digital aesthetics, 
+                exploring themes of technology, consciousness, and the liminal spaces between realities.
+            </p>
+            <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--space-8);">
+                All content is original, created by a single anonymous creator. 
+                The work here prioritizes authenticity, experimentation, and community engagement 
+                in a space free from algorithmic pressures.
+            </p>
+            <a href="/about.html" class="btn btn-primary">
+                <i class="fas fa-user-secret"></i> Learn More
+            </a>
         </div>
     </section>
 
@@ -149,59 +207,56 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h4 class="footer-heading">Steamed and Baked</h4>
-                    <p class="footer-text">Your destination for the finest steamed and baked goods, crafted with passion and tradition.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    </div>
+                <div class="footer-section">
+                    <h4>STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</h4>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">
+                        A digital showcase for experimental fiction, poetry, and visual narratives.
+                    </p>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Quick Links</h4>
+                <div class="footer-section">
+                    <h4>Explore</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/fiction.html">Fiction</a></li>
+                        <li><a href="/poetry.html">Poetry</a></li>
+                        <li><a href="/comics.html">Comics & Art</a></li>
+                        <li><a href="/archive.html">Archive</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Info</h4>
+                    <ul class="footer-links">
                         <li><a href="/about.html">About</a></li>
-                        <li><a href="/menu.html">Menu</a></li>
-                        <li><a href="/services.html">Services</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/submit.html">Submit</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/rss.xml">RSS Feed</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-col">
-                    <h4 class="footer-heading">Contact Info</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, State 12345</li>
-                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@steamedandbaked.com</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-heading">Hours</h4>
-                    <ul class="footer-hours">
-                        <li><strong>Mon-Fri:</strong> 7:00 AM - 8:00 PM</li>
-                        <li><strong>Saturday:</strong> 8:00 AM - 9:00 PM</li>
-                        <li><strong>Sunday:</strong> 9:00 AM - 6:00 PM</li>
-                    </ul>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
+                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Steamed and Baked. All rights reserved.</p>
-                <ul class="footer-legal">
-                    <li><a href="/privacy.html">Privacy Policy</a></li>
-                    <li><a href="/terms.html">Terms of Service</a></li>
-                </ul>
+                <p>&copy; <span id="current-year"></span> SteamedAndBaked. All content is original and protected.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="/js/main.js"></script>
-    <script src="/js/error-logger.js"></script>
 </body>
 </html>

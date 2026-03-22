@@ -1,16 +1,17 @@
 # Dependencies
 node_modules/
 .npm/
+package-lock.json
 
-# Environment Files
+# Environment
 .env
 .env.local
 .env.production
+.dev.vars
 
 # Logs
 logs/
 *.log
-npm-debug.log*
 
 # OS Files
 .DS_Store
@@ -22,17 +23,17 @@ Thumbs.db
 *.swp
 *.swo
 
-# Backup files
-*.backup
-*.bak
-*.tar.gz
-*.zip
-
-# Build artifacts
+# Build
 dist/
 build/
+.cache/
 
-# Temporary files
+# Backup
+*.backup
+*.bak
+*.old
+v1-backup/
+
+# Temporary
 temp/
 tmp/
-.cache/

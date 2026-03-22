@@ -1,46 +1,56 @@
-# SteamedAndBaked.com Website
+# SteamedAndBaked.com v3.0
 
-**Domain:** steamedandbaked.com  
-**Hosting:** DreamHost VPS  
-**Repository:** https://github.com/pealjason-boop/Brayson-Management (steamed-and-baked directory)  
-**Version:** 1.0  
-**Last Updated:** March 22, 2026
+**Dark Psychedelic Neon-Cyberpunk Aesthetic**  
+**Digital Showcase for Experimental Creative Work**
 
 ---
 
-## Project Overview
+## 🎨 Project Overview
 
-SteamedAndBaked.com is a static marketing website for a culinary business specializing in steamed and baked goods. The site is built with HTML5, CSS3, and vanilla JavaScript, optimized for performance and SEO, and designed to be deployed on DreamHost's Apache hosting environment.
+SteamedAndBaked.com is a single-creator digital showcase for experimental fiction, poetry, comics, and visual narratives. The site emphasizes a dark psychedelic neon-cyberpunk aesthetic with a focus on high-quality content presentation and anonymous community engagement.
 
-### Technology Stack
+### Key Features
+
+✅ **Cyberpunk Visual Design** - Neon colors, dark backgrounds, glowing effects  
+✅ **Content Showcase** - Fiction, poetry, and comics displays  
+✅ **Responsive Layout** - Mobile-first, fully responsive design  
+✅ **Modern JavaScript** - Smooth animations, interactions, easter eggs  
+✅ **Performance Optimized** - Fast loading, efficient code  
+✅ **SEO Ready** - Semantic HTML, meta tags, clean URLs  
+✅ **Accessibility** - ARIA labels, keyboard navigation  
+
+---
+
+## 🚀 Technology Stack
 
 | Component | Technology |
 |-----------|-----------|
-| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
-| **Server** | Apache (DreamHost VPS) |
-| **Icons** | Font Awesome 6.4.0 (CDN) |
+| **Frontend** | HTML5, CSS3 (Custom Properties), Vanilla JavaScript |
+| **Fonts** | Google Fonts (Inter, Space Grotesk) |
+| **Icons** | Font Awesome 6.4.0 |
+| **Server** | Apache (DreamHost) |
 | **Version Control** | Git |
 
 ---
 
-## Directory Structure
+## 📁 Directory Structure
 
 ```
 steamed-and-baked/
 ├── css/
-│   └── style.css              # Main stylesheet with responsive design
+│   └── cyberpunk.css          # Main stylesheet with cyberpunk aesthetic
 ├── js/
-│   ├── main.js                # Core functionality (navigation, forms, animations)
-│   └── error-logger.js        # Client-side error tracking
-├── images/                    # Image assets (to be added)
-│   ├── logo.svg               # Main logo (SVG)
-│   ├── logo.png               # Logo fallback (PNG)
-│   ├── favicon.svg            # Favicon
-│   └── [other images]
+│   └── main.js                # Core JavaScript functionality
+├── images/                    # Image assets
+├── assets/
+│   ├── fonts/                 # Custom fonts (if needed)
+│   └── icons/                 # Custom icons
+├── content/
+│   ├── fiction/               # Fiction content
+│   ├── poetry/                # Poetry content
+│   └── comics/                # Comics content
 ├── index.html                 # Homepage
 ├── about.html                 # About page
-├── contact.html               # Contact page
-├── thank-you.html             # Form submission thank you page
 ├── 404.html                   # Custom 404 error page
 ├── .htaccess                  # Apache configuration
 ├── .gitignore                 # Git ignore rules
@@ -49,548 +59,386 @@ steamed-and-baked/
 
 ---
 
-## Pages
+## 🎨 Design System
+
+### Color Palette
+
+**Neon Colors:**
+- Cyan: `#00ffff` - Primary brand color
+- Magenta: `#ff00ff` - Secondary brand color
+- Pink: `#ff0080` - Accent color
+- Purple: `#bf00ff`
+- Green: `#00ff41`
+- Blue: `#0080ff`
+- Orange: `#ff6600`
+- Yellow: `#ffff00`
+
+**Dark Backgrounds:**
+- Primary: `#0a0a0f`
+- Secondary: `#131318`
+- Tertiary: `#1a1a24`
+- Card: `#1f1f2e`
+- Elevated: `#252538`
+
+**Text Colors:**
+- Primary: `#e0e0ff`
+- Secondary: `#a0a0c0`
+- Muted: `#606080`
+- Highlight: Cyan
+
+### Typography
+
+- **Headings**: Space Grotesk (monospace feel)
+- **Body**: Inter (clean, modern)
+- **Code**: Fira Code (monospace)
+
+### Visual Effects
+
+- **Neon Glow**: Box shadows with blur
+- **Glitch Effect**: Text animation with color shifting
+- **Gradient Text**: Cyan to magenta gradients
+- **Card Hover**: 3D tilt effect with glow
+- **Animations**: Smooth transitions, fade-ins
+
+---
+
+## 🌐 Pages
 
 ### Completed Pages
 
 1. **index.html** - Homepage
-   - Hero section
-   - Features showcase (4 feature cards)
-   - About preview section
-   - CTA section
-   - Full navigation and footer
+   - Hero section with glitch effect
+   - Latest content showcase
+   - Category exploration
+   - About preview
 
-2. **about.html** - About Page
-   - Our story section
-   - Mission & vision cards
-   - Core values (6 value cards)
-   - Team member profiles (placeholder)
+2. **about.html** - About page
+   - Project description
+   - Creator information
+   - Aesthetic philosophy
+   - Technical details
+   - Contact information
 
-3. **contact.html** - Contact Page
-   - Contact information cards
-   - Contact form with validation
-   - Business hours display
-   - Map placeholder
-
-4. **thank-you.html** - Form Submission Confirmation
-   - Success message
+3. **404.html** - Custom error page
+   - Cyberpunk-styled 404
    - Navigation options
 
-5. **404.html** - Custom Error Page
-   - User-friendly error message
-   - Navigation to home/contact
+### Planned Pages
 
-### Pending Pages
-
-- **menu.html** - Menu/product showcase (not yet created)
-- **services.html** - Services page (not yet created)
-- **privacy.html** - Privacy policy (not yet created)
-- **terms.html** - Terms of service (not yet created)
+- `fiction.html` - Fiction archive/listing
+- `poetry.html` - Poetry archive/listing
+- `comics.html` - Comics/visual art showcase
+- `archive.html` - Complete content archive
+- `privacy.html` - Privacy policy
+- Individual content pages (stories, poems, comics)
 
 ---
 
-## Design Tokens
-
-### Colors (PLACEHOLDER - Replace with Brand Colors)
-
-The following color variables in `css/style.css` need to be replaced with actual brand colors from the design assets:
-
-```css
---color-primary: #e67e22;        /* Main brand color */
---color-primary-dark: #d35400;   /* Darker variant */
---color-primary-light: #f39c12;  /* Lighter variant */
---color-secondary: #3498db;      /* Secondary color */
---color-secondary-dark: #2980b9; /* Darker variant */
---color-secondary-light: #5dade2; /* Lighter variant */
-```
-
-### Typography (PLACEHOLDER - Replace with Brand Fonts)
-
-Current fonts are system defaults. Replace with actual brand fonts:
-
-```css
---font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
---font-heading: 'Georgia', 'Times New Roman', serif;
-```
-
-To add custom fonts:
-1. Add font files (.woff2 format) to `/fonts/` directory
-2. Update font-face declarations in CSS
-3. Update CSS variables
-
----
-
-## Missing Design Assets
-
-### Critical Assets (Phase 1 - Pre-Dev Handoff)
-
-According to the Developer Handoff Checklist, the following assets are still needed:
-
-**Logo Files:**
-- [ ] logo.svg (vector, scalable) - **CRITICAL**
-- [ ] logo.png (transparent, min 512×512px) - **CRITICAL**
-- [ ] logo-dark.svg (dark mode variant) - HIGH
-
-**Favicon Package:**
-- [ ] favicon.svg
-- [ ] favicon.ico
-- [ ] apple-touch-icon.png (180×180px)
-- [ ] site.webmanifest
-
-**Brand Colors:**
-- [ ] Full hex code list for light mode - **CRITICAL**
-- [ ] Dark mode hex codes - **CRITICAL**
-
-**Typography:**
-- [ ] Font names or font files (.woff2) - **CRITICAL**
-
-**Images:**
-- [ ] Hero background image/pattern
-- [ ] About section images
-- [ ] Team member photos
-- [ ] Product/food photography
-- [ ] Open Graph image (1200×630px)
-- [ ] Twitter card image (1200×600px)
-
----
-
-## Features
+## ⚙️ Features
 
 ### Current Features
 
-✅ Fully responsive design (mobile, tablet, desktop)  
-✅ Modern CSS with CSS custom properties  
-✅ Mobile-first navigation with hamburger menu  
-✅ Smooth scrolling and animations  
-✅ Contact form with client-side validation  
-✅ Client-side error logging system  
-✅ SEO-optimized meta tags  
-✅ Open Graph and Twitter Card meta tags  
-✅ Font Awesome icons integration  
-✅ Apache .htaccess configuration  
-✅ Custom 404 error page  
-✅ Browser caching and compression  
-✅ Security headers  
-✅ HTTPS enforcement  
+✅ **Responsive Navigation** - Mobile hamburger menu with smooth transitions  
+✅ **Hero Section** - Animated gradient text with glitch effect  
+✅ **Content Cards** - Hover effects with 3D tilt  
+✅ **Smooth Scrolling** - Anchor link smooth scroll  
+✅ **Parallax Effect** - Hero parallax on scroll  
+✅ **Keyboard Shortcuts** - ESC to close menus  
+✅ **Easter Eggs** - Konami code activation  
+✅ **Performance Monitoring** - Console logging of load times  
+✅ **Animated Background** - Subtle radial gradients  
 
-### Pending Features
+### Planned Features
 
-⏳ Form backend integration (currently client-side only)  
-⏳ Newsletter signup integration  
-⏳ Google Maps integration  
-⏳ Menu/product catalog  
-⏳ Online ordering system  
-⏳ Blog/news section  
-⏳ Dark mode support  
+⏳ **Content Management** - Backend for managing posts  
+⏳ **Comment System** - Anonymous discussion  
+⏳ **Search Functionality** - Full-text content search  
+⏳ **RSS Feed** - XML feed for content updates  
+⏳ **Newsletter** - Email subscription  
+⏳ **Dark/Light Toggle** - User preference (currently dark-only)  
+⏳ **Reading Progress** - Scroll indicator for articles  
+⏳ **Social Sharing** - Share buttons for content  
 
 ---
 
-## Deployment Guide
+## 🚀 Deployment Guide
 
-### Prerequisites
+### DreamHost Deployment
 
-- SSH access to DreamHost server
-- Git installed on server
-- Domain configured (steamedandbaked.com)
-
-### Initial Setup on DreamHost
-
-1. **SSH into your DreamHost server:**
-   ```bash
-   ssh username@your-server.dreamhost.com
+1. **Upload via SFTP:**
+   ```
+   Host: your-server.dreamhost.com
+   Port: 22
+   Username: your-username
+   Directory: ~/steamedandbaked.com/
    ```
 
-2. **Navigate to website directory:**
-   ```bash
-   cd ~/steamedandbaked.com
-   ```
+2. **Upload all files** to the web directory
 
-3. **Clone repository (if using git deployment):**
-   ```bash
-   git clone https://github.com/pealjason-boop/Brayson-Management.git temp
-   mv temp/steamed-and-baked/* ./
-   rm -rf temp
-   ```
+3. **Verify .htaccess** is uploaded (enables clean URLs, HTTPS, compression)
 
-4. **Or upload files via SFTP:**
-   - Use FileZilla, Cyberduck, or similar
-   - Upload all files to `~/steamedandbaked.com/`
-   - Ensure .htaccess is uploaded
+4. **Set permissions:**
+   - Files: 644
+   - Directories: 755
 
-5. **Set correct permissions:**
-   ```bash
-   find . -type f -exec chmod 644 {} \;
-   find . -type d -exec chmod 755 {} \;
-   chmod 644 .htaccess
-   ```
+5. **Test:**
+   - Visit https://steamedandbaked.com
+   - Check all pages load correctly
+   - Verify HTTPS redirect works
+   - Test mobile responsiveness
 
-6. **Verify .htaccess is working:**
-   ```bash
-   cat .htaccess
-   ```
+### Git Deployment (Alternative)
 
-### Updating the Website
-
-**Option 1: Git Pull (Recommended)**
 ```bash
-ssh username@your-server.dreamhost.com
+# On server
+ssh username@server.dreamhost.com
 cd ~/steamedandbaked.com
-git pull origin main
+git clone https://github.com/username/repo.git .
+
+# Updates
+git pull origin v3-cyberpunk
 ```
-
-**Option 2: SFTP Upload**
-- Upload changed files via SFTP client
-- Overwrite existing files
-
-**Option 3: Rsync (Advanced)**
-```bash
-rsync -avz --exclude='.git' ./steamed-and-baked/ username@your-server.dreamhost.com:~/steamedandbaked.com/
-```
-
-### Post-Deployment Checklist
-
-After deploying, verify:
-
-- [ ] Homepage loads correctly
-- [ ] All pages are accessible
-- [ ] Navigation works on mobile and desktop
-- [ ] Contact form validation works
-- [ ] HTTPS is enforced (check redirect)
-- [ ] Images load (once added)
-- [ ] 404 page displays for invalid URLs
-- [ ] No console errors in browser
-- [ ] Responsive design works on mobile
 
 ---
 
-## Development Workflow
+## 💻 Local Development
 
-### Local Development
+### Setup
 
-1. **Start a local server:**
+1. **Clone repository:**
+   ```bash
+   git clone https://github.com/username/repo.git
+   cd steamed-and-baked
+   git checkout v3-cyberpunk
+   ```
+
+2. **Start local server:**
    ```bash
    # Python 3
    python3 -m http.server 8000
    
-   # Python 2
-   python -m SimpleHTTPServer 8000
-   
    # PHP
    php -S localhost:8000
    
-   # Node.js (with http-server)
+   # Node.js
    npx http-server -p 8000
    ```
 
-2. **Open in browser:**
+3. **Open browser:**
    ```
    http://localhost:8000
    ```
 
-3. **Make changes and test**
+### Development Workflow
 
-4. **Commit changes:**
-   ```bash
-   git add .
-   git commit -m "Description of changes"
-   git push origin main
-   ```
-
-### Testing Checklist
-
-Before deploying:
-
-- [ ] Test on Chrome, Firefox, Safari
-- [ ] Test on mobile devices
-- [ ] Validate HTML (https://validator.w3.org/)
-- [ ] Check console for JavaScript errors
-- [ ] Test contact form validation
-- [ ] Verify all links work
-- [ ] Check responsive breakpoints
+1. Make changes to HTML/CSS/JS files
+2. Refresh browser to see changes
+3. Test on multiple screen sizes
+4. Commit changes with clear messages
+5. Push to repository
+6. Deploy to DreamHost
 
 ---
 
-## Configuration
+## 🎯 Browser Support
 
-### .htaccess Configuration
-
-The `.htaccess` file includes:
-
-- **HTTPS enforcement** - All traffic redirected to HTTPS
-- **URL rewriting** - Clean URLs without .html extension
-- **Security headers** - X-Frame-Options, CSP, etc.
-- **Compression** - GZIP compression for text files
-- **Caching** - Browser caching for static assets
-- **Custom error pages** - 404, 500 error handling
-- **Hotlink protection** - Prevent image hotlinking (commented out)
-
-To modify:
-1. Edit `.htaccess` file
-2. Test changes carefully
-3. Keep backup of working version
-
-### Security Features
-
-- HTTPS enforcement via .htaccess
-- Security headers (X-Frame-Options, X-XSS-Protection, etc.)
-- Content Security Policy (CSP)
-- Protection of sensitive files (.git, .htaccess, .env)
-- Bad bot blocking
-- Directory browsing disabled
+- **Chrome** 90+
+- **Firefox** 88+
+- **Safari** 14+
+- **Edge** 90+
+- **Mobile** iOS Safari 14+, Chrome Mobile 90+
 
 ---
 
-## JavaScript Functionality
+## 🔧 Customization
 
-### main.js
+### Changing Colors
 
-**Features:**
-- Mobile navigation toggle
-- Smooth scrolling for anchor links
-- Form validation
-- Scroll animations with Intersection Observer
-- Lazy loading images
-- Notification system
+Edit `/css/cyberpunk.css` and update CSS custom properties:
 
-**Available Functions:**
-- Auto-initialized on page load
-- No manual initialization required
-
-### error-logger.js
-
-**Features:**
-- Captures JavaScript errors
-- Logs unhandled promise rejections
-- Monitors resource loading errors
-- Tracks performance metrics
-- Stores errors in localStorage
-
-**Available Commands (Console):**
-```javascript
-getErrorLog()       // View all logged errors
-clearErrorLog()     // Clear error log
-exportErrorLog()    // Export errors to JSON file
-logCustomError(message, data)  // Log custom error
+```css
+:root {
+    --neon-cyan: #00ffff;
+    --neon-magenta: #ff00ff;
+    --primary: var(--neon-cyan);
+    --secondary: var(--neon-magenta);
+}
 ```
 
-**Configuration:**
-Edit config object in `error-logger.js`:
-```javascript
-const config = {
-    enableConsoleLog: true,
-    enableRemoteLog: false,  // Enable when backend ready
-    remoteEndpoint: '/api/log-error',
-    maxErrors: 50
-};
+### Changing Fonts
+
+Update Google Fonts link in HTML and CSS variables:
+
+```css
+:root {
+    --font-primary: 'Your Font', sans-serif;
+    --font-heading: 'Your Heading Font', monospace;
+}
 ```
 
----
+### Adding Content
 
-## Browser Support
-
-### Desktop Browsers
-
-✅ Chrome 90+  
-✅ Firefox 88+  
-✅ Safari 14+  
-✅ Edge 90+
-
-### Mobile Browsers
-
-✅ iOS Safari 14+  
-✅ Chrome Mobile 90+  
-✅ Samsung Internet 14+  
-✅ Firefox Mobile 88+
-
-### Graceful Degradation
-
-- Intersection Observer fallback for older browsers
-- CSS Grid fallback to flexbox
-- Modern CSS features with fallbacks
+1. Create new HTML file in root directory
+2. Use existing page as template
+3. Update navigation links
+4. Add to footer
+5. Update sitemap
 
 ---
 
-## Performance Optimization
+## 📈 Performance
 
-### Current Optimizations
+### Current Metrics
 
-- Minified CSS (can create minified version)
-- Optimized .htaccess caching rules
-- GZIP compression enabled
-- Lazy loading for images
-- CDN for Font Awesome icons
-- Efficient CSS selectors
-- Minimal JavaScript
+- **CSS**: ~17KB (cyberpunk.css)
+- **JavaScript**: ~14KB (main.js)
+- **Total Page Weight**: <100KB (without images)
+- **Load Time**: <2 seconds (on fast connection)
+
+### Optimization Tips
+
+- Minify CSS and JS for production
+- Compress images (WebP format)
+- Use CDN for external resources
+- Enable GZIP compression (already in .htaccess)
+- Lazy load images
+- Preload critical resources
+
+---
+
+## 🔒 Security
+
+### Implemented
+
+✅ HTTPS enforcement (.htaccess)  
+✅ Security headers (X-Frame-Options, CSP, etc.)  
+✅ File protection (.git, .htaccess)  
+✅ Directory browsing disabled  
+✅ Bad bot blocking  
 
 ### Recommendations
 
-1. **Image Optimization:**
-   - Use WebP format with JPEG/PNG fallbacks
-   - Compress images (TinyPNG, ImageOptim)
-   - Use responsive images with srcset
-
-2. **CSS Optimization:**
-   - Create minified version: `style.min.css`
-   - Remove unused CSS rules
-
-3. **JavaScript Optimization:**
-   - Create minified versions
-   - Consider bundling with Webpack/Rollup
-
-4. **CDN Integration:**
-   - Consider Cloudflare for static assets
-   - Already using CDN for Font Awesome
+- Keep Apache/PHP updated
+- Use strong passwords
+- Monitor error logs
+- Regular backups
+- Enable 2FA on hosting account
 
 ---
 
-## SEO Optimization
+## 📝 Content Guidelines
 
-### Current SEO Features
+### Adding New Content
 
-✅ Semantic HTML5 markup  
-✅ Meta descriptions on all pages  
-✅ Open Graph meta tags  
-✅ Twitter Card meta tags  
-✅ Alt text placeholders for images  
-✅ Clean URL structure  
-✅ Mobile-friendly design  
-✅ Fast load times  
+1. **Fiction**: Create HTML file in `/content/fiction/`
+2. **Poetry**: Create HTML file in `/content/poetry/`
+3. **Comics**: Create HTML file in `/content/comics/`
 
-### SEO Checklist
+### Content Template
 
-- [ ] Add actual brand images to Open Graph tags
-- [ ] Update meta descriptions with real content
-- [ ] Add structured data (Schema.org)
-- [ ] Create XML sitemap
-- [ ] Submit sitemap to Google Search Console
-- [ ] Verify with Google Search Console
-- [ ] Set up Google Analytics
-- [ ] Create robots.txt file
-- [ ] Add canonical URLs
-- [ ] Optimize images with descriptive filenames
-
----
-
-## Next Steps
-
-### Phase 1 - Design Assets Integration
-
-1. Receive logo files from designer
-2. Receive brand colors and fonts
-3. Update CSS variables with brand colors
-4. Integrate custom fonts
-5. Add favicon package
-6. Update all placeholder images
-
-### Phase 2 - Content Population
-
-1. Replace placeholder text with real content
-2. Add product/food photography
-3. Update team member profiles
-4. Add menu/product catalog
-5. Write and add blog content
-
-### Phase 3 - Backend Integration
-
-1. Set up form submission backend (email service)
-2. Integrate newsletter signup (Mailchimp, etc.)
-3. Add Google Maps integration
-4. Set up analytics tracking
-5. Implement contact form spam protection
-
-### Phase 4 - Additional Features
-
-1. Create menu/services pages
-2. Add online ordering system (if needed)
-3. Implement blog/news section
-4. Add customer testimonials
-5. Create photo gallery
-6. Add dark mode support
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title | SteamedAndBaked</title>
+    <link rel="stylesheet" href="/css/cyberpunk.css">
+</head>
+<body>
+    <!-- Include navigation -->
+    <!-- Your content here -->
+    <!-- Include footer -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
+```
 
 ---
 
-## Maintenance
-
-### Regular Tasks
-
-**Weekly:**
-- Check error logs via console commands
-- Review analytics (once set up)
-- Test contact form
-
-**Monthly:**
-- Update dependencies (Font Awesome CDN)
-- Review and update content
-- Check broken links
-- Verify SSL certificate
-- Review server logs
-
-**Quarterly:**
-- Security audit
-- Performance review
-- Content refresh
-- SEO review
-
----
-
-## Troubleshooting
+## 🐛 Troubleshooting
 
 ### Common Issues
 
-**Issue:** .htaccess rules not working
-- **Solution:** Check if mod_rewrite is enabled on server
-- Contact DreamHost support if needed
+**Issue:** Fonts not loading  
+**Solution:** Check Google Fonts link in HTML
 
-**Issue:** Images not loading
-- **Solution:** Check file paths and permissions
-- Ensure images directory has 755 permissions
+**Issue:** CSS not applying  
+**Solution:** Clear browser cache, check CSS path
 
-**Issue:** Form not submitting
-- **Solution:** Form is currently client-side only
-- Backend integration needed for actual submission
+**Issue:** JavaScript not working  
+**Solution:** Check browser console for errors
 
-**Issue:** CSS not updating
-- **Solution:** Clear browser cache or use hard refresh (Ctrl+F5)
-- Check .htaccess caching rules
+**Issue:** 404 errors  
+**Solution:** Verify .htaccess is uploaded and working
 
----
-
-## Support & Contact
-
-**Project Owner:** Jason Peal, Brayson Management  
-**Email:** peal.jason@gmail.com  
-**Repository:** https://github.com/pealjason-boop/Brayson-Management  
-**DreamHost Support:** https://panel.dreamhost.com/support
+**Issue:** HTTPS not working  
+**Solution:** Check .htaccess rewrite rules, verify SSL cert
 
 ---
 
-## License
+## 📞 Support
 
-All rights reserved. © 2026 Steamed and Baked
-
----
-
-## Changelog
-
-### Version 1.0 (March 22, 2026)
-
-**Initial Release:**
-- Created homepage with hero, features, and CTA sections
-- Built about page with mission, vision, and values
-- Developed contact page with form and business hours
-- Implemented responsive navigation
-- Added error logging system
-- Created Apache configuration
-- Set up Git repository
-- Comprehensive documentation
-
-**Pending:**
-- Design asset integration
-- Menu and services pages
-- Backend form integration
-- Content population
+**Project Location:** `/home/user/webapp/steamed-and-baked`  
+**Branch:** `v3-cyberpunk`  
+**Backup:** `/home/user/webapp/steamed-and-baked-v1-backup`
 
 ---
 
-**Status:** Ready for Design Asset Integration 🎨  
-**Next Milestone:** Complete Phase 1 - Add brand colors, logos, and fonts
+## 📜 Version History
+
+### v3.0 (March 22, 2026) - Cyberpunk Rebuild
+
+**Complete redesign with:**
+- Dark psychedelic neon-cyberpunk aesthetic
+- New color scheme (cyan, magenta, purple neons)
+- Glitch effects and animations
+- Content-focused layout
+- Modern JavaScript interactions
+- Performance optimizations
+
+### v1.0 (Previous Version)
+
+- Clean restaurant/bakery design
+- Light colors and traditional layout
+- Backed up to `/steamed-and-baked-v1-backup/`
+
+---
+
+## 📄 License
+
+All content is original and protected. © 2026 SteamedAndBaked
+
+---
+
+## 🚀 Quick Commands
+
+```bash
+# Navigate to project
+cd /home/user/webapp/steamed-and-baked
+
+# Check git status
+git status
+
+# View git log
+git log --oneline
+
+# Switch branches
+git checkout v3-cyberpunk
+
+# Create new branch
+git checkout -b feature-name
+
+# Commit changes
+git add .
+git commit -m "Your message"
+
+# Push to remote
+git push origin v3-cyberpunk
+```
+
+---
+
+**Status:** ✅ v3.0 Complete - Ready for Content Integration  
+**Aesthetic:** Dark Psychedelic Neon-Cyberpunk  
+**Last Updated:** March 22, 2026

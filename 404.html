@@ -3,47 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Steamed and Baked</title>
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <title>404 - Page Not Found | SteamedAndBaked</title>
+    <link rel="stylesheet" href="/css/cyberpunk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="/">
-                    <img src="/images/logo.svg" alt="Steamed and Baked Logo" class="logo">
-                </a>
-            </div>
+        <div class="nav-container">
+            <a href="/" class="logo">STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</a>
         </div>
     </nav>
 
-    <section style="min-height: 80vh; display: flex; align-items: center; padding: 4rem 0; background-color: #f8f9fa;">
-        <div class="container" style="text-align: center;">
-            <div style="font-size: 8rem; color: #e67e22; margin-bottom: 1rem; font-weight: bold;">404</div>
-            <h1 style="margin-bottom: 1rem;">Page Not Found</h1>
-            <p style="font-size: 1.25rem; color: #6c757d; margin-bottom: 2rem;">
-                Oops! The page you're looking for doesn't exist or has been moved.
+    <section class="hero">
+        <div class="hero-content">
+            <div style="font-size: 8rem; color: var(--neon-cyan); text-shadow: var(--glow-cyan); margin-bottom: var(--space-6);">
+                404
+            </div>
+            <h1 class="glitch" data-text="PAGE NOT FOUND" style="font-size: var(--text-4xl);">PAGE NOT FOUND</h1>
+            <p class="hero-subtitle">
+                The page you're looking for doesn't exist in this reality.<br>
+                Perhaps it's in another dimension?
             </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="/" class="btn btn-primary btn-large">
-                    <i class="fas fa-home"></i> Go Home
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-8);">
+                <a href="/" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Return Home
                 </a>
-                <a href="/contact.html" class="btn btn-secondary btn-large">
-                    <i class="fas fa-envelope"></i> Contact Us
+                <a href="/fiction.html" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Browse Content
                 </a>
             </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
-                <p>&copy; <span id="current-year"></span> Steamed and Baked. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="/js/main.js"></script>
 </body>
