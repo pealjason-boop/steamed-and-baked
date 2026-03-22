@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Environment Files
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backup files
+*.backup
+*.bak
+*.tar.gz
+*.zip
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+temp/
+tmp/
+.cache/
