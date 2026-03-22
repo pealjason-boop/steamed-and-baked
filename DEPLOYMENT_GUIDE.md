@@ -1,4 +1,4 @@
-# SteamedAndBaked.com - Deployment Guide
+# SteamedAndBaked.net - Deployment Guide
 
 **Last Updated**: March 22, 2026  
 **Version**: 3.0 (Cyberpunk Redesign)  
@@ -10,7 +10,7 @@
 
 - **GitHub Repository**: https://github.com/pealjason-boop/steamed-and-baked
 - **Preview Server**: https://8000-i4t43jvo7hq6fkrx0c9zz-ea026bf9.sandbox.novita.ai
-- **Target Domain**: https://steamedandbaked.com (DreamHost)
+- **Target Domain**: https://steamedandbaked.net (DreamHost)
 - **Project Owner**: Jason Peal (peal.jason@gmail.com)
 
 ---
@@ -67,7 +67,7 @@
 
 2. Navigate to domain directory:
    ```
-   cd ~/steamedandbaked.com/
+   cd ~/steamedandbaked.net/
    ```
 
 3. Upload all files from `/home/user/webapp/steamed-and-baked/`:
@@ -82,15 +82,15 @@
 
 4. Set proper permissions:
    ```bash
-   chmod 755 ~/steamedandbaked.com
-   chmod 644 ~/steamedandbaked.com/*.html
-   chmod 644 ~/steamedandbaked.com/.htaccess
-   chmod 644 ~/steamedandbaked.com/css/*
-   chmod 644 ~/steamedandbaked.com/js/*
+   chmod 755 ~/steamedandbaked.net
+   chmod 644 ~/steamedandbaked.net/*.html
+   chmod 644 ~/steamedandbaked.net/.htaccess
+   chmod 644 ~/steamedandbaked.net/css/*
+   chmod 644 ~/steamedandbaked.net/js/*
    ```
 
 5. Test the site:
-   - Visit: https://steamedandbaked.com
+   - Visit: https://steamedandbaked.net
    - Check HTTPS redirect works
    - Test mobile responsiveness
    - Verify all links work
@@ -107,14 +107,14 @@
 
 2. Navigate to domain directory:
    ```bash
-   cd ~/steamedandbaked.com/
+   cd ~/steamedandbaked.net/
    ```
 
 3. Clone or pull from GitHub:
    ```bash
    # First time deployment
    git clone https://github.com/pealjason-boop/steamed-and-baked.git temp
-   cp -r temp/* ~/steamedandbaked.com/
+   cp -r temp/* ~/steamedandbaked.net/
    rm -rf temp
 
    # OR for updates (if git already initialized)
@@ -123,7 +123,7 @@
 
 4. Verify files are in place:
    ```bash
-   ls -la ~/steamedandbaked.com/
+   ls -la ~/steamedandbaked.net/
    ```
 
 5. Test the site (same as Option 1, step 5)
@@ -142,7 +142,7 @@
 4. Wait 2-3 minutes for deployment
 5. Preview URL will be: https://pealjason-boop.github.io/steamed-and-baked/
 
-**Note**: GitHub Pages is for preview only. Production site should be on steamedandbaked.com.
+**Note**: GitHub Pages is for preview only. Production site should be on steamedandbaked.net.
 
 ---
 
@@ -165,8 +165,8 @@ Then visit: http://localhost:8000
 ## 📝 Post-Deployment Checklist
 
 ### Immediate (Required)
-- [ ] Upload all files to DreamHost `~/steamedandbaked.com/`
-- [ ] Verify https://steamedandbaked.com loads correctly
+- [ ] Upload all files to DreamHost `~/steamedandbaked.net/`
+- [ ] Verify https://steamedandbaked.net loads correctly
 - [ ] Test HTTPS redirect (http → https)
 - [ ] Test 404 error page
 - [ ] Test mobile responsiveness (iOS/Android)
@@ -182,7 +182,7 @@ Then visit: http://localhost:8000
 - [ ] Add sample content (3-5 stories, poems, comics)
 - [ ] Create privacy.html page
 - [ ] Set up Google Analytics or Plausible Analytics
-- [ ] Configure DreamHost email (contact@steamedandbaked.com)
+- [ ] Configure DreamHost email (contact@steamedandbaked.net)
 
 ### Long-Term (Future Features)
 - [ ] Anonymous comment system (Disqus, Commento, or custom)
@@ -288,7 +288,7 @@ Then visit: http://localhost:8000
 **Solution**:
 - Verify `.htaccess` was uploaded
 - Check Apache has AllowOverride enabled (DreamHost default)
-- Test by visiting: https://steamedandbaked.com/nonexistent-page
+- Test by visiting: https://steamedandbaked.net/nonexistent-page
 
 ### Issue: Mobile menu not working
 **Solution**:

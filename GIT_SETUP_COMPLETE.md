@@ -1,4 +1,4 @@
-# ✅ GitHub Setup Complete - SteamedAndBaked.com
+# ✅ GitHub Setup Complete - SteamedAndBaked.net
 
 **Date**: March 22, 2026  
 **Status**: Production Ready  

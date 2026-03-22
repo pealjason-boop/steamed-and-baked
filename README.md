@@ -1,4 +1,4 @@
-# SteamedAndBaked.com v3.0
+# SteamedAndBaked.net v3.0
 
 **Dark Psychedelic Neon-Cyberpunk Aesthetic**  
 **Digital Showcase for Experimental Creative Work**
@@ -7,7 +7,7 @@
 
 ## 🎨 Project Overview
 
-SteamedAndBaked.com is a single-creator digital showcase for experimental fiction, poetry, comics, and visual narratives. The site emphasizes a dark psychedelic neon-cyberpunk aesthetic with a focus on high-quality content presentation and anonymous community engagement.
+SteamedAndBaked.net is a single-creator digital showcase for experimental fiction, poetry, comics, and visual narratives. The site emphasizes a dark psychedelic neon-cyberpunk aesthetic with a focus on high-quality content presentation and anonymous community engagement.
 
 ### Key Features
 
