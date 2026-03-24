@@ -376,13 +376,14 @@ blockquote {
     letter-spacing: 0.14em;
 }
 
-/* Per-item neon color accents on hover */
+/* Per-item neon color accents on hover — 7 items: Home, Stories, Poetry, Comics, Essays, Videos, About */
 .nav-menu li:nth-child(1) .nav-link:hover { color: var(--neon-cyan);    border-color: rgba(0,255,255,0.35);    box-shadow: 0 0 12px rgba(0,255,255,0.35),    inset 0 0 8px rgba(0,255,255,0.06); }
 .nav-menu li:nth-child(2) .nav-link:hover { color: var(--neon-magenta); border-color: rgba(255,0,255,0.35);    box-shadow: 0 0 12px rgba(255,0,255,0.35),   inset 0 0 8px rgba(255,0,255,0.06); }
 .nav-menu li:nth-child(3) .nav-link:hover { color: var(--neon-pink);    border-color: rgba(255,0,128,0.35);    box-shadow: 0 0 12px rgba(255,0,128,0.35),   inset 0 0 8px rgba(255,0,128,0.06); }
 .nav-menu li:nth-child(4) .nav-link:hover { color: var(--neon-purple);  border-color: rgba(191,0,255,0.35);    box-shadow: 0 0 12px rgba(191,0,255,0.35),   inset 0 0 8px rgba(191,0,255,0.06); }
-.nav-menu li:nth-child(5) .nav-link:hover { color: var(--neon-green);   border-color: rgba(0,255,65,0.35);     box-shadow: 0 0 12px rgba(0,255,65,0.35),    inset 0 0 8px rgba(0,255,65,0.06); }
-.nav-menu li:nth-child(6) .nav-link:hover { color: var(--neon-orange);  border-color: rgba(255,102,0,0.35);    box-shadow: 0 0 12px rgba(255,102,0,0.35),   inset 0 0 8px rgba(255,102,0,0.06); }
+.nav-menu li:nth-child(5) .nav-link:hover { color: var(--neon-green);   border-color: rgba(0,255,65,0.35);     box-shadow: 0 0 12px rgba(0,255,65,0.35),    inset 0 0 8px rgba(0,255,65,0.06);  }
+.nav-menu li:nth-child(6) .nav-link:hover { color: var(--neon-blue);    border-color: rgba(0,128,255,0.35);    box-shadow: 0 0 12px rgba(0,128,255,0.35),   inset 0 0 8px rgba(0,128,255,0.06); }
+.nav-menu li:nth-child(7) .nav-link:hover { color: var(--neon-orange);  border-color: rgba(255,102,0,0.35);    box-shadow: 0 0 12px rgba(255,102,0,0.35),   inset 0 0 8px rgba(255,102,0,0.06); }
 
 /* Mobile nav toggle */
 .nav-toggle {
