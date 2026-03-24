@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Manager | SteamedAndBaked</title>
+    <link rel="stylesheet" href="/css/cyberpunk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* ── ADMIN SHELL ── */
+        body { background: #08080f; }
+
+        #lock-screen {
+            position: fixed; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: #08080f; z-index: 999;
+        }
+        .lock-box {
+            background: #0e0e18;
+            border: 1px solid rgba(139,92,246,0.4);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            width: 340px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(139,92,246,0.2);
+        }
+        .lock-box h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            color: #fff; margin-bottom: 0.4rem;
+            background: none; -webkit-text-fill-color: #fff; text-shadow: none;
+        }
+        .lock-box p { font-size: 0.82rem; color: #888; margin-bottom: 1.5rem; }
+        .lock-box input {
+            width: 100%; padding: 0.65rem 1rem;
+            background: #13131f; border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px; color: #fff; font-size: 1rem;
+            outline: none; margin-bottom: 1rem; letter-spacing: 0.1em;
+        }
+        .lock-box input:focus { border-color: #8b5cf6; }
+        .lock-box button {
+            width: 100%; padding: 0.7rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border: none; border-radius: 8px;
+            color: #fff; font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em;
+            cursor: pointer; transition: opacity 0.2s;
+        }
+        .lock-box button:hover { opacity: 0.85; }
+        .lock-error { color: #f87171; font-size: 0.8rem; margin-top: 0.5rem; display: none; }
+
+        /* ── ADMIN LAYOUT ── */
+        #admin-app { display: none; min-height: 100vh; }
+
+        .admin-header {
+            background: #0e0e18;
+            border-bottom: 1px solid rgba(139,92,246,0.25);
+            padding: 1rem 2rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .admin-header .brand {
+            font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 700; color: #fff;
+        }
+        .admin-header .brand span { color: #8b5cf6; }
+        .admin-logout {
+            font-size: 0.78rem; color: #888; cursor: pointer;
+            background: none; border: 1px solid rgba(255,255,255,0.1);
+            padding: 0.3rem 0.8rem; border-radius: 6px; transition: all 0.2s;
+        }
+        .admin-logout:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+        .admin-body {
+            max-width: 900px; margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+        }
+
+        /* ── TABS ── */
+        .tabs {
+            display: flex; gap: 0.5rem;
+            margin-bottom: 2rem; flex-wrap: wrap;
+        }
+        .tab-btn {
+            padding: 0.5rem 1.2rem;
+            background: #0e0e18;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 999px; color: #888;
+            font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 600;
+            cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em;
+        }
+        .tab-btn:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-color: transparent; color: #fff;
+        }
+
+        /* ── FORM ── */
+        .form-card {
+            background: #0e0e18;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px; padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .form-card h3 {
+            font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 700;
+            color: #fff; margin-bottom: 1.5rem; letter-spacing: 0.05em;
+            background: none; -webkit-text-fill-color: #fff; text-shadow: none;
+        }
+        .form-row { margin-bottom: 1.2rem; }
+        .form-row label {
+            display: block; font-size: 0.78rem; font-weight: 600;
+            color: #8888aa; letter-spacing: 0.08em; text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+        .form-row input,
+        .form-row textarea,
+        .form-row select {
+            width: 100%; padding: 0.65rem 0.9rem;
+            background: #13131f; border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; color: #fff; font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; outline: none; transition: border-color 0.2s;
+        }
+        .form-row input:focus,
+        .form-row textarea:focus,
+        .form-row select:focus { border-color: #8b5cf6; }
+        .form-row textarea { resize: vertical; min-height: 90px; }
+        .form-row select option { background: #13131f; }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .color-row { display: flex; align-items: center; gap: 0.75rem; }
+        .color-row input[type="color"] {
+            width: 44px; height: 36px; padding: 2px; cursor: pointer;
+            border-radius: 6px; flex-shrink: 0;
+        }
+        .color-row input[type="text"] { flex: 1; }
+
+        .submit-btn {
+            width: 100%; padding: 0.85rem;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border: none; border-radius: 8px;
+            color: #fff; font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em;
+            cursor: pointer; transition: opacity 0.2s, transform 0.15s;
+            margin-top: 0.5rem;
+        }
+        .submit-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+        .submit-btn:active { transform: translateY(0); }
+
+        /* ── SUCCESS TOAST ── */
+        .toast {
+            position: fixed; bottom: 2rem; right: 2rem;
+            background: #14b8a6; color: #fff;
+            font-family: 'Outfit', sans-serif; font-size: 0.88rem; font-weight: 600;
+            padding: 0.75rem 1.3rem; border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(20,184,166,0.4);
+            transform: translateY(80px); opacity: 0;
+            transition: all 0.35s cubic-bezier(.34,1.56,.64,1);
+            z-index: 9999; pointer-events: none;
+        }
+        .toast.show { transform: translateY(0); opacity: 1; }
+
+        /* ── CONTENT LIST ── */
+        .content-list { margin-top: 0.5rem; }
+        .content-list h3 {
+            font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700;
+            color: #8888aa; letter-spacing: 0.12em; text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: none; -webkit-text-fill-color: #8888aa; text-shadow: none;
+        }
+        .content-list-item {
+            background: #0e0e18; border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 8px; padding: 0.9rem 1.1rem;
+            margin-bottom: 0.6rem;
+            display: flex; align-items: flex-start; justify-content: space-between;
+            gap: 1rem;
+        }
+        .cli-info { flex: 1; min-width: 0; }
+        .cli-title {
+            font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 600;
+            color: #fff; margin-bottom: 0.25rem;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .cli-meta { font-size: 0.75rem; color: #666; }
+        .cli-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            flex-shrink: 0; margin-top: 4px;
+        }
+        .cli-delete {
+            background: none; border: none; color: #555; cursor: pointer;
+            font-size: 0.85rem; padding: 0.2rem 0.4rem;
+            border-radius: 4px; transition: color 0.2s;
+            flex-shrink: 0;
+        }
+        .cli-delete:hover { color: #f87171; }
+
+        /* ── CODE EXPORT ── */
+        .export-card {
+            background: #0e0e18; border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 12px; padding: 1.5rem 2rem; margin-top: 2rem;
+        }
+        .export-card h3 {
+            font-family: 'Outfit', sans-serif; font-size: 0.9rem; font-weight: 700;
+            color: #8888aa; letter-spacing: 0.1em; text-transform: uppercase;
+            margin-bottom: 1rem;
+            background: none; -webkit-text-fill-color: #8888aa; text-shadow: none;
+        }
+        .export-card textarea {
+            width: 100%; min-height: 160px;
+            background: #08080f; border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 8px; color: #8b5cf6;
+            font-family: 'Fira Code', monospace; font-size: 0.78rem;
+            padding: 1rem; resize: vertical; outline: none;
+        }
+        .copy-btn {
+            margin-top: 0.75rem; padding: 0.5rem 1.2rem;
+            background: none; border: 1px solid rgba(139,92,246,0.4);
+            border-radius: 6px; color: #8b5cf6;
+            font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .copy-btn:hover { background: rgba(139,92,246,0.1); border-color: #8b5cf6; }
+
+        /* ── INSTRUCTIONS ── */
+        .instructions {
+            background: #0e0e18; border: 1px solid rgba(20,184,166,0.2);
+            border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2rem;
+        }
+        .instructions h3 {
+            font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 700;
+            color: #14b8a6; letter-spacing: 0.1em; text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            background: none; -webkit-text-fill-color: #14b8a6; text-shadow: none;
+        }
+        .instructions ol { padding-left: 1.2rem; }
+        .instructions li { font-size: 0.82rem; color: #8888aa; margin-bottom: 0.35rem; line-height: 1.5; }
+        .instructions code {
+            background: #13131f; color: #8b5cf6; padding: 0.1em 0.4em;
+            border-radius: 4px; font-size: 0.78rem; border: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── LOCK SCREEN ── -->
+<div id="lock-screen">
+    <div class="lock-box">
+        <div style="font-size:2rem; margin-bottom:0.75rem;">🔒</div>
+        <h2>Content Manager</h2>
+        <p>SteamedAndBaked Admin</p>
+        <input type="password" id="pw-input" placeholder="Enter password" autocomplete="current-password">
+        <button onclick="checkPassword()">UNLOCK</button>
+        <div class="lock-error" id="lock-error">Incorrect password</div>
+    </div>
+</div>
+
+<!-- ── ADMIN APP ── -->
+<div id="admin-app">
+
+    <div class="admin-header">
+        <div class="brand">STEAMED<span>&</span>BAKED <span style="color:#555; font-weight:400; font-size:0.8rem; margin-left:0.5rem;">/ Content Manager</span></div>
+        <button class="admin-logout" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Lock</button>
+    </div>
+
+    <div class="admin-body">
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How It Works</h3>
+            <ol>
+                <li>Pick a section tab, fill out the form, and click <strong>Add Content</strong></li>
+                <li>Your new item appears in the list below and is saved to <code>localStorage</code></li>
+                <li>Copy the generated HTML snippet and paste it into the matching page's content grid</li>
+                <li>Push the file to GitHub and it goes live on the site</li>
+            </ol>
+        </div>
+
+        <!-- Section Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('stories', this)"><i class="fas fa-book"></i> Stories</button>
+            <button class="tab-btn" onclick="switchTab('poetry', this)"><i class="fas fa-feather-alt"></i> Poetry</button>
+            <button class="tab-btn" onclick="switchTab('comics', this)"><i class="fas fa-image"></i> Comics</button>
+            <button class="tab-btn" onclick="switchTab('essays', this)"><i class="fas fa-lightbulb"></i> Essays</button>
+        </div>
+
+        <!-- Add Form -->
+        <div class="form-card">
+            <h3><i class="fas fa-plus-circle" style="color:#8b5cf6; margin-right:0.5rem;"></i> Add New <span id="form-section-label">Story</span></h3>
+
+            <div class="form-row">
+                <label>Title *</label>
+                <input type="text" id="f-title" placeholder="Enter title...">
+            </div>
+
+            <div class="form-row">
+                <label>Description *</label>
+                <textarea id="f-desc" placeholder="Short description or excerpt..."></textarea>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-row">
+                    <label>Date</label>
+                    <input type="text" id="f-date" placeholder="e.g. Mar 24, 2026">
+                </div>
+                <div class="form-row">
+                    <label><span id="time-label">Read Time</span></label>
+                    <input type="text" id="f-time" placeholder="e.g. 8 min read">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label>Tags <span style="color:#555;">(comma separated)</span></label>
+                <input type="text" id="f-tags" placeholder="e.g. Sci-Fi, Cyberpunk, Dark">
+            </div>
+
+            <div class="form-row">
+                <label>Image URL <span style="color:#555;">(optional)</span></label>
+                <input type="text" id="f-image" placeholder="https://... or leave blank for gradient">
+            </div>
+
+            <div class="form-row">
+                <label>Accent Color</label>
+                <div class="color-row">
+                    <input type="color" id="f-color-picker" value="#8b5cf6" oninput="document.getElementById('f-color').value=this.value">
+                    <input type="text" id="f-color" value="#8b5cf6" placeholder="#8b5cf6" oninput="document.getElementById('f-color-picker').value=this.value">
+                </div>
+            </div>
+
+            <button class="submit-btn" onclick="addContent()">
+                <i class="fas fa-plus"></i> Add Content
+            </button>
+        </div>
+
+        <!-- Content List -->
+        <div class="content-list">
+            <h3>Existing <span id="list-section-label">Stories</span></h3>
+            <div id="content-list-items"></div>
+        </div>
+
+        <!-- HTML Export -->
+        <div class="export-card">
+            <h3><i class="fas fa-code" style="margin-right:0.5rem;"></i> Generated HTML — Paste Into Your Page</h3>
+            <textarea id="html-export" readonly placeholder="Add a new item above to generate HTML..."></textarea>
+            <button class="copy-btn" onclick="copyHTML()">
+                <i class="fas fa-copy"></i> Copy HTML
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONFIG ──────────────────────────────────────────────
+const ADMIN_PASSWORD = 'snb2026';   // ← change this!
+
+const SECTION_LABELS = {
+    stories: { singular: 'Story', plural: 'Stories', icon: 'fas fa-book', timeLabel: 'Read Time', page: 'fiction.html' },
+    poetry:  { singular: 'Poem',  plural: 'Poems',   icon: 'fas fa-feather-alt', timeLabel: 'Read Time', page: 'poetry.html' },
+    comics:  { singular: 'Comic', plural: 'Comics',  icon: 'fas fa-image', timeLabel: 'Panels', page: 'comics.html' },
+    essays:  { singular: 'Essay', plural: 'Essays',  icon: 'fas fa-lightbulb', timeLabel: 'Read Time', page: 'essays.html' }
+};
+
+let currentTab = 'stories';
+
+// ── AUTH ─────────────────────────────────────────────────
+function checkPassword() {
+    const val = document.getElementById('pw-input').value;
+    if (val === ADMIN_PASSWORD) {
+        sessionStorage.setItem('snb_admin', '1');
+        document.getElementById('lock-screen').style.display = 'none';
+        document.getElementById('admin-app').style.display = 'block';
+        renderList();
+    } else {
+        document.getElementById('lock-error').style.display = 'block';
+        document.getElementById('pw-input').value = '';
+    }
+}
+
+function logout() {
+    sessionStorage.removeItem('snb_admin');
+    document.getElementById('lock-screen').style.display = 'flex';
+    document.getElementById('admin-app').style.display = 'none';
+    document.getElementById('pw-input').value = '';
+}
+
+document.getElementById('pw-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') checkPassword();
+});
+
+if (sessionStorage.getItem('snb_admin') === '1') {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('admin-app').style.display = 'block';
+    renderList();
+}
+
+// ── TABS ─────────────────────────────────────────────────
+function switchTab(tab, btn) {
+    currentTab = tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const info = SECTION_LABELS[tab];
+    document.getElementById('form-section-label').textContent = info.singular;
+    document.getElementById('list-section-label').textContent = info.plural;
+    document.getElementById('time-label').textContent = info.timeLabel;
+    document.getElementById('html-export').value = '';
+    renderList();
+}
+
+// ── DATA ─────────────────────────────────────────────────
+function getData() {
+    const raw = localStorage.getItem('snb_content');
+    if (raw) return JSON.parse(raw);
+    // seed with defaults
+    return { stories: [], poetry: [], comics: [], essays: [] };
+}
+
+function saveData(data) {
+    localStorage.setItem('snb_content', JSON.stringify(data));
+}
+
+// ── ADD ──────────────────────────────────────────────────
+function addContent() {
+    const title = document.getElementById('f-title').value.trim();
+    const desc  = document.getElementById('f-desc').value.trim();
+    if (!title || !desc) { showToast('⚠️ Title and description are required', '#f87171'); return; }
+
+    const item = {
+        id: currentTab[0] + Date.now(),
+        title,
+        description: desc,
+        date:    document.getElementById('f-date').value.trim()  || new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'}),
+        readTime:document.getElementById('f-time').value.trim()  || '5 min read',
+        tags:    document.getElementById('f-tags').value.split(',').map(t => t.trim()).filter(Boolean),
+        image:   document.getElementById('f-image').value.trim(),
+        color:   document.getElementById('f-color').value.trim() || '#8b5cf6'
+    };
+
+    const data = getData();
+    data[currentTab].unshift(item);
+    saveData(data);
+
+    // clear form
+    ['f-title','f-desc','f-date','f-time','f-tags','f-image'].forEach(id => document.getElementById(id).value = '');
+
+    showToast('✅ ' + SECTION_LABELS[currentTab].singular + ' added!');
+    renderList();
+    generateExport(item);
+}
+
+// ── DELETE ────────────────────────────────────────────────
+function deleteItem(id) {
+    const data = getData();
+    data[currentTab] = data[currentTab].filter(i => i.id !== id);
+    saveData(data);
+    renderList();
+    document.getElementById('html-export').value = '';
+    showToast('🗑️ Deleted', '#f87171');
+}
+
+// ── RENDER LIST ───────────────────────────────────────────
+function renderList() {
+    const data = getData();
+    const items = data[currentTab] || [];
+    const container = document.getElementById('content-list-items');
+
+    if (!items.length) {
+        container.innerHTML = '<p style="color:#555; font-size:0.85rem; padding:1rem 0;">No items yet — add your first one above.</p>';
+        return;
+    }
+
+    container.innerHTML = items.map(item => `
+        <div class="content-list-item">
+            <div class="cli-dot" style="background:${item.color};"></div>
+            <div class="cli-info">
+                <div class="cli-title">${item.title}</div>
+                <div class="cli-meta">${item.date} · ${item.readTime}${item.tags.length ? ' · ' + item.tags.join(', ') : ''}</div>
+            </div>
+            <button class="cli-delete" onclick="selectItem('${item.id}')" title="View HTML"><i class="fas fa-code"></i></button>
+            <button class="cli-delete" onclick="deleteItem('${item.id}')" title="Delete"><i class="fas fa-trash"></i></button>
+        </div>
+    `).join('');
+}
+
+function selectItem(id) {
+    const data = getData();
+    const item = data[currentTab].find(i => i.id === id);
+    if (item) generateExport(item);
+}
+
+// ── GENERATE HTML ─────────────────────────────────────────
+function generateExport(item) {
+    const info = SECTION_LABELS[currentTab];
+    const imgStyle = item.image
+        ? `<img src="${item.image}" alt="${item.title}" style="width:100%;height:200px;object-fit:cover;">`
+        : `<div class="content-thumbnail" style="background: linear-gradient(135deg, #0a0a0f, #1a1a24, ${item.color}33);"></div>`;
+
+    const tagsHTML = item.tags.map(t => `<span class="tag">${t}</span>`).join('\n                            ');
+
+    const html = `<!-- ${item.title} -->
+<article class="content-item">
+    ${imgStyle}
+    <div class="content-body">
+        <span class="content-category"><i class="${info.icon}"></i> ${info.singular}</span>
+        <h3 style="color: ${item.color}; margin-bottom: var(--space-2);">${item.title}</h3>
+        <p class="card-meta">
+            <span><i class="fas fa-calendar"></i> ${item.date}</span>
+            <span><i class="fas fa-clock"></i> ${item.readTime}</span>
+        </p>
+        <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">
+            ${item.description}
+        </p>
+        <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            ${tagsHTML}
+        </div>
+    </div>
+</article>`;
+
+    document.getElementById('html-export').value = html;
+    document.getElementById('html-export').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ── COPY HTML ─────────────────────────────────────────────
+function copyHTML() {
+    const ta = document.getElementById('html-export');
+    if (!ta.value) { showToast('Nothing to copy yet', '#f87171'); return; }
+    navigator.clipboard.writeText(ta.value).then(() => showToast('📋 HTML copied to clipboard!'));
+}
+
+// ── TOAST ─────────────────────────────────────────────────
+function showToast(msg, color = '#14b8a6') {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.background = color;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>

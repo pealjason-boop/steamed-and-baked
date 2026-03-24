@@ -1,0 +1,100 @@
+{
+  "stories": [
+    {
+      "id": "s001",
+      "title": "The Neon Wasteland",
+      "description": "In the ruins of the old internet, consciousness fragments drift like ghosts through abandoned servers. One entity awakens to find themselves scattered across a thousand dead websites...",
+      "date": "Mar 22, 2026",
+      "readTime": "12 min read",
+      "tags": ["Cyberpunk", "AI", "Digital Consciousness"],
+      "color": "#00ffff",
+      "image": ""
+    },
+    {
+      "id": "s002",
+      "title": "Glitch in the Signal",
+      "description": "Every night at 3:33 AM, the same broadcast repeats. No one knows who sends it or why. But tonight, someone answers back...",
+      "date": "Mar 20, 2026",
+      "readTime": "8 min read",
+      "tags": ["Mystery", "Signal", "Horror"],
+      "color": "#ff00ff",
+      "image": ""
+    },
+    {
+      "id": "s003",
+      "title": "The Quantum Paradox",
+      "description": "A slant story about the consequences of bending time.",
+      "date": "Mar 18, 2026",
+      "readTime": "10 min read",
+      "tags": ["Sci-Fi", "Time", "Physics"],
+      "color": "#8b5cf6",
+      "image": ""
+    }
+  ],
+  "poetry": [
+    {
+      "id": "p001",
+      "title": "Electric Dreams",
+      "description": "A collection of verses exploring the intersection of humanity and technology in the neon-lit corridors of the digital age...",
+      "date": "Mar 20, 2026",
+      "readTime": "3 min read",
+      "tags": ["Tech", "Human", "Verse"],
+      "color": "#ff00ff",
+      "image": ""
+    },
+    {
+      "id": "p002",
+      "title": "Stardust Verses",
+      "description": "Experimental poetry from the outer rim.",
+      "date": "Mar 17, 2026",
+      "readTime": "4 min read",
+      "tags": ["Space", "Experimental"],
+      "color": "#00ffff",
+      "image": ""
+    }
+  ],
+  "comics": [
+    {
+      "id": "c001",
+      "title": "Neon Wasteland #1",
+      "description": "First issue of the gritty cyberpunk series set in a post-collapse mega-city where hackers and corporations wage a silent war...",
+      "date": "Mar 18, 2026",
+      "readTime": "8 panels",
+      "tags": ["Cyberpunk", "Action", "Series"],
+      "color": "#bf00ff",
+      "image": ""
+    },
+    {
+      "id": "c002",
+      "title": "Circuit Breaker",
+      "description": "A visual narrative about fragmentation and identity in the digital age...",
+      "date": "Mar 15, 2026",
+      "readTime": "12 panels",
+      "tags": ["Identity", "Digital", "Art"],
+      "color": "#00ffff",
+      "image": ""
+    }
+  ],
+  "essays": [
+    {
+      "id": "e001",
+      "title": "The Unconventional Creative Path",
+      "description": "Why the most interesting creative work happens outside conventional frameworks. A meditation on embracing the experimental, the strange, and the personal in an age of algorithmic homogeneity.",
+      "date": "Mar 22, 2026",
+      "readTime": "8 min read",
+      "tags": ["Creativity", "Art", "Philosophy"],
+      "color": "#ffff00",
+      "image": ""
+    },
+    {
+      "id": "e002",
+      "title": "Editor's Note: The Future of Fiction",
+      "description": "Thoughts on the evolving landscape of sci-fi.",
+      "date": "Mar 19, 2026",
+      "readTime": "5 min read",
+      "tags": ["Sci-Fi", "Writing", "Future"],
+      "color": "#ff6600",
+      "image": ""
+    }
+  ]
+}
