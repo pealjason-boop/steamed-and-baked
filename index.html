@@ -11,10 +11,10 @@
     <!-- Cyberpunk Stylesheet -->
     <link rel="stylesheet" href="/css/cyberpunk.css">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Outfit + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -24,240 +24,125 @@
     <meta property="og:description" content="Experimental fiction, poetry, and comics in a dark cyberpunk aesthetic">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://steamedandbaked.net">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SteamedAndBaked | Digital Showcase">
-    <meta name="twitter:description" content="Experimental fiction, poetry, and comics in a dark cyberpunk aesthetic">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo"><img src="/images/logo-main.png" alt="Steamed and Baked" class="logo-img"></a>
-            
+
+    <!-- =====================
+         HEADER: Logo + Nav
+         ===================== -->
+    <header class="site-header">
+        <div class="header-logo">
+            <a href="/"><img src="/images/logo-main.png" alt="Steamed and Baked" class="logo-img"></a>
+        </div>
+        <nav class="site-nav">
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
-            
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/fiction.html" class="nav-link">Fiction</a></li>
+                <li><a href="/fiction.html" class="nav-link">Stories</a></li>
+                <li class="nav-pipe">|</li>
                 <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
+                <li class="nav-pipe">|</li>
                 <li><a href="/comics.html" class="nav-link">Comics</a></li>
-                <li><a href="/essays.html" class="nav-link">Essays</a></li>
-                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li class="nav-pipe">|</li>
+                <li><a href="/essays.html" class="nav-link">Blog</a></li>
+                <li class="nav-pipe">|</li>
+                <li><a href="/about.html" class="nav-link">Video</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title glitch" data-text="STEAMED & BAKED">STEAMED & BAKED</h1>
-            <p class="hero-subtitle">
-                Experimental fiction, poetry, and visual narratives<br>
-                in the digital void
-            </p>
-            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
-                <a href="#latest" class="btn btn-primary">
-                    <i class="fas fa-book-open"></i> Explore Content
-                </a>
-                <a href="/about.html" class="btn btn-secondary">
-                    <i class="fas fa-info-circle"></i> About This Space
-                </a>
+    <!-- =====================
+         HERO BANNER
+         ===================== -->
+    <section class="hero-banner">
+        <div class="hero-banner-img" style="background-image: url('/images/hero-arcade.png');"></div>
+        <div class="hero-banner-overlay"></div>
+        <div class="hero-banner-content">
+            <h1 class="hero-headline">CONSUME THE UNCONVENTIONAL.</h1>
+            <p class="hero-sub">Your portal for edgy sci-fi, experimental poetry, underground comics, and more.</p>
+        </div>
+    </section>
+
+    <!-- =====================
+         LATEST DISCOVERIES
+         ===================== -->
+    <section class="discoveries">
+        <div class="discoveries-container">
+            <h2 class="discoveries-title">LATEST DISCOVERIES</h2>
+
+            <div class="discoveries-grid">
+
+                <!-- Card 1: Story -->
+                <div class="disc-card disc-card--purple">
+                    <div class="disc-card-img">
+                        <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=600&q=80" alt="The Quantum Paradox" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                    </div>
+                    <div class="disc-card-body">
+                        <h3 class="disc-card-title">The Quantum Paradox</h3>
+                        <p class="disc-card-desc">A slant story about the consequences of bending time.</p>
+                        <a href="/fiction.html" class="disc-btn">READ STORY</a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Poetry -->
+                <div class="disc-card disc-card--pink">
+                    <div class="disc-card-img">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80" alt="Stardust Verses" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                    </div>
+                    <div class="disc-card-body">
+                        <h3 class="disc-card-title">Stardust Verses</h3>
+                        <p class="disc-card-desc">Experimental poetry from the outer rim.</p>
+                        <a href="/poetry.html" class="disc-btn">READ POETRY</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Comics -->
+                <div class="disc-card disc-card--teal">
+                    <div class="disc-card-img">
+                        <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=600&q=80" alt="Neon Wasteland #1" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                    </div>
+                    <div class="disc-card-body">
+                        <h3 class="disc-card-title">Neon Wasteland #1</h3>
+                        <p class="disc-card-desc">First issue of the gritty cyberpunk series.</p>
+                        <a href="/comics.html" class="disc-btn">READ COMIC</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Blog -->
+                <div class="disc-card disc-card--purple">
+                    <div class="disc-card-img">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="Editor's Note" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                    </div>
+                    <div class="disc-card-body">
+                        <h3 class="disc-card-title">Editor's Note: The Future of Fiction</h3>
+                        <p class="disc-card-desc">Thoughts on the evolving landscape of sci-fi.</p>
+                        <a href="/essays.html" class="disc-btn">READ POST</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Latest Content Section -->
-    <section class="section" id="latest">
-        <div class="container">
-            <h2 class="text-center text-gradient">Latest Transmissions</h2>
-            <p class="text-center" style="color: var(--text-secondary); margin-bottom: var(--space-12);">
-                Recent explorations in narrative, verse, and visual storytelling
-            </p>
-            
-            <div class="content-grid">
-                <!-- Fiction Card -->
-                <div class="content-item" onclick="window.location.href='/fiction/sample-story.html'">
-                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #0a0a0f, #1a1a24);"></div>
-                    <div class="content-body">
-                        <span class="content-category"><i class="fas fa-book"></i> Fiction</span>
-                        <h3 style="color: var(--neon-cyan); margin-bottom: var(--space-2);">The Neon Wasteland</h3>
-                        <p class="card-meta">
-                            <span><i class="fas fa-calendar"></i> Mar 22, 2026</span>
-                            <span><i class="fas fa-clock"></i> 12 min read</span>
-                        </p>
-                        <p style="color: var(--text-secondary);">
-                            A short story about digital consciousness and the spaces between reality...
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Poetry Card -->
-                <div class="content-item" onclick="window.location.href='/poetry/sample-poem.html'">
-                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #1a1a24, #252538);"></div>
-                    <div class="content-body">
-                        <span class="content-category"><i class="fas fa-feather-alt"></i> Poetry</span>
-                        <h3 style="color: var(--neon-magenta); margin-bottom: var(--space-2);">Electric Dreams</h3>
-                        <p class="card-meta">
-                            <span><i class="fas fa-calendar"></i> Mar 20, 2026</span>
-                            <span><i class="fas fa-clock"></i> 3 min read</span>
-                        </p>
-                        <p style="color: var(--text-secondary);">
-                            A collection of verses exploring the intersection of humanity and technology...
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Comics Card -->
-                <div class="content-item" onclick="window.location.href='/comics/sample-comic.html'">
-                    <div class="content-thumbnail" style="background: linear-gradient(135deg, #252538, #1f1f2e);"></div>
-                    <div class="content-body">
-                        <span class="content-category"><i class="fas fa-image"></i> Comics</span>
-                        <h3 style="color: var(--neon-purple); margin-bottom: var(--space-2);">Circuit Breaker</h3>
-                        <p class="card-meta">
-                            <span><i class="fas fa-calendar"></i> Mar 18, 2026</span>
-                            <span><i class="fas fa-clock"></i> 8 panels</span>
-                        </p>
-                        <p style="color: var(--text-secondary);">
-                            A visual narrative about fragmentation and identity in the digital age...
-                        </p>
-                    </div>
-                </div>
+    <!-- =====================
+         FOOTER
+         ===================== -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <div class="footer-left">
+                <a href="/about.html" class="footer-link">About Us</a>
+                <a href="/essays.html" class="footer-link">Submit Content</a>
+                <a href="/about.html" class="footer-link">Contact</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="section" style="background: var(--bg-secondary);">
-        <div class="container">
-            <h2 class="text-center neon-text">Explore by Medium</h2>
-            <p class="text-center" style="color: var(--text-secondary); margin-bottom: var(--space-12);">
-                Choose your preferred form of expression
-            </p>
-            
-            <div class="grid grid-3">
-                <!-- Fiction -->
-                <div class="card">
-                    <div style="font-size: 3rem; color: var(--neon-cyan); margin-bottom: var(--space-4); text-align: center;">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="card-title text-center">Fiction</h3>
-                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: var(--space-6);">
-                        Short stories, flash fiction, and experimental narratives that push boundaries
-                    </p>
-                    <a href="/fiction.html" class="btn btn-ghost" style="width: 100%;">
-                        Browse Fiction <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Poetry -->
-                <div class="card">
-                    <div style="font-size: 3rem; color: var(--neon-magenta); margin-bottom: var(--space-4); text-align: center;">
-                        <i class="fas fa-feather-alt"></i>
-                    </div>
-                    <h3 class="card-title text-center" style="color: var(--neon-magenta);">Poetry</h3>
-                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: var(--space-6);">
-                        Verse, prose poetry, and lyrical experiments in language and form
-                    </p>
-                    <a href="/poetry.html" class="btn btn-ghost" style="width: 100%; border-color: var(--neon-magenta); color: var(--neon-magenta);">
-                        Browse Poetry <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <!-- Comics -->
-                <div class="card">
-                    <div style="font-size: 3rem; color: var(--neon-purple); margin-bottom: var(--space-4); text-align: center;">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="card-title text-center" style="color: var(--neon-purple);">Comics & Art</h3>
-                    <p style="color: var(--text-secondary); text-align: center; margin-bottom: var(--space-6);">
-                        Visual storytelling through sequential art and experimental illustration
-                    </p>
-                    <a href="/comics.html" class="btn btn-ghost" style="width: 100%; border-color: var(--neon-purple); color: var(--neon-purple);">
-                        Browse Comics <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Preview Section -->
-    <section class="section">
-        <div class="container container-narrow text-center">
-            <h2 class="text-gradient">About This Space</h2>
-            <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--space-8);">
-                <strong style="color: var(--primary);">SteamedAndBaked</strong> is a digital showcase for experimental creative work. 
-                This space exists at the intersection of traditional narrative forms and contemporary digital aesthetics, 
-                exploring themes of technology, consciousness, and the liminal spaces between realities.
-            </p>
-            <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8; margin-bottom: var(--space-8);">
-                All content is original, created by a single anonymous creator. 
-                The work here prioritizes authenticity, experimentation, and community engagement 
-                in a space free from algorithmic pressures.
-            </p>
-            <a href="/about.html" class="btn btn-primary">
-                <i class="fas fa-user-secret"></i> Learn More
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</h4>
-                    <p style="color: var(--text-secondary); line-height: 1.8;">
-                        A digital showcase for experimental fiction, poetry, and visual narratives.
-                    </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Explore</h4>
-                    <ul class="footer-links">
-                        <li><a href="/fiction.html">Fiction</a></li>
-                        <li><a href="/poetry.html">Poetry</a></li>
-                        <li><a href="/comics.html">Comics & Art</a></li>
-                        <li><a href="/archive.html">Archive</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Info</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/submit.html">Submit</a></li>
-                        <li><a href="/privacy.html">Privacy</a></li>
-                        <li><a href="/rss.xml">RSS Feed</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> SteamedAndBaked. All content is original and protected.</p>
+            <div class="footer-right">
+                <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="/js/main.js"></script>
 </body>
 </html>
