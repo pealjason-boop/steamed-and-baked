@@ -993,20 +993,48 @@ blockquote {
     font-size: clamp(1.8rem, 4.5vw, 3rem);
     font-weight: 800;
     color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
     letter-spacing: 0.06em;
     text-shadow:
         0 0 30px rgba(255,255,255,0.5),
         0 2px 4px rgba(0,0,0,1),
         0 4px 24px rgba(0,0,0,0.9);
     margin-bottom: var(--space-3);
-    background: none;
-    -webkit-text-fill-color: #ffffff;
     text-transform: uppercase;
     padding: 0.4rem 1.2rem;
     background: rgba(0,0,0,0.35);
     backdrop-filter: blur(4px);
     border-radius: 4px;
     display: inline-block;
+    cursor: default;
+    border: 1px solid transparent;
+    transition:
+        text-shadow 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.25s ease,
+        letter-spacing 0.35s ease;
+}
+
+.hero-headline:hover {
+    background: rgba(191, 0, 255, 0.18);
+    border-color: rgba(191, 0, 255, 0.55);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(
+        90deg,
+        #ff00ff 0%,
+        #bf00ff 25%,
+        #00ffff 50%,
+        #bf00ff 75%,
+        #ff00ff 100%
+    );
+    background-size: 200% auto;
+    text-shadow: none;
+    transform: scale(1.03);
+    letter-spacing: 0.10em;
+    animation: heroTextSweep 1.8s linear infinite;
 }
 
 .hero-sub {
@@ -1023,6 +1051,32 @@ blockquote {
     border-radius: 3px;
     display: inline-block;
     letter-spacing: 0.01em;
+    cursor: default;
+    border: 1px solid transparent;
+    transition:
+        color 0.35s ease,
+        text-shadow 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.25s ease,
+        letter-spacing 0.3s ease;
+}
+
+.hero-sub:hover {
+    color: #00ffff;
+    background: rgba(0, 255, 255, 0.10);
+    border-color: rgba(0, 255, 255, 0.40);
+    text-shadow:
+        0 0 8px rgba(0, 255, 255, 0.9),
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 0 40px rgba(191, 0, 255, 0.4);
+    letter-spacing: 0.04em;
+    transform: scale(1.02);
+}
+
+@keyframes heroTextSweep {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
 }
 
 /* ========================================
