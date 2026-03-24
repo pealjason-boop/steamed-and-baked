@@ -891,6 +891,35 @@ blockquote {
    NEW LAYOUT: HERO BANNER
    ======================================== */
 
+/* Hero banner keyframes */
+@keyframes heroPan {
+    0%   { transform: scale(1.08) translateX(0px) translateY(0px); }
+    25%  { transform: scale(1.10) translateX(-18px) translateY(-6px); }
+    50%  { transform: scale(1.12) translateX(-10px) translateY(4px); }
+    75%  { transform: scale(1.10) translateX(14px) translateY(-4px); }
+    100% { transform: scale(1.08) translateX(0px) translateY(0px); }
+}
+
+@keyframes scanline {
+    0%   { top: -8px; opacity: 0; }
+    5%   { opacity: 0.18; }
+    95%  { opacity: 0.18; }
+    100% { top: 110%; opacity: 0; }
+}
+
+@keyframes edgePulse {
+    0%, 100% { opacity: 0.55; }
+    50%       { opacity: 0.8; }
+}
+
+@keyframes chromaFlicker {
+    0%, 100% { filter: brightness(0.58) saturate(1.25) hue-rotate(0deg); }
+    20%       { filter: brightness(0.60) saturate(1.35) hue-rotate(4deg); }
+    40%       { filter: brightness(0.56) saturate(1.20) hue-rotate(-3deg); }
+    60%       { filter: brightness(0.59) saturate(1.30) hue-rotate(2deg); }
+    80%       { filter: brightness(0.57) saturate(1.22) hue-rotate(-2deg); }
+}
+
 .hero-banner {
     position: relative;
     width: 100%;
@@ -901,18 +930,44 @@ blockquote {
     justify-content: center;
 }
 
+/* Scanline sweep */
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(20, 184, 166, 0.25) 50%,
+        transparent 100%
+    );
+    animation: scanline 5s linear infinite;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Neon edge vignette pulse */
+.hero-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 0% 50%,   rgba(139, 92, 246, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 100% 50%,  rgba(20, 184, 166, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.12) 0%, transparent 50%);
+    animation: edgePulse 4s ease-in-out infinite;
+    z-index: 3;
+    pointer-events: none;
+}
+
 .hero-banner-img {
     position: absolute;
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.55) saturate(1.2);
-    transform: scale(1.02);
-    transition: transform 8s ease;
-}
-
-.hero-banner:hover .hero-banner-img {
-    transform: scale(1.06);
+    animation: heroPan 22s ease-in-out infinite, chromaFlicker 9s ease-in-out infinite;
 }
 
 .hero-banner-overlay {
@@ -920,15 +975,16 @@ blockquote {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(10,10,15,0.15) 0%,
-        rgba(10,10,15,0.3) 60%,
-        rgba(10,10,15,0.75) 100%
+        rgba(10,10,15,0.10) 0%,
+        rgba(10,10,15,0.25) 60%,
+        rgba(10,10,15,0.72) 100%
     );
+    z-index: 2;
 }
 
 .hero-banner-content {
     position: relative;
-    z-index: 2;
+    z-index: 5;
     text-align: center;
     padding: 0 var(--space-8);
     max-width: 900px;
