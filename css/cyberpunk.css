@@ -289,7 +289,6 @@ blockquote {
     height: 80px;
     width: auto;
     background: transparent;
-    mix-blend-mode: lighten;
     transition: transform var(--transition-base), filter var(--transition-base), opacity var(--transition-base);
     filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.7));
     opacity: 0.92;
