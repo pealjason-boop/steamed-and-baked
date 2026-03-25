@@ -43,7 +43,6 @@ steamed-and-baked/
 ├── essays.html             # Essays & blog
 ├── about.html              # About page
 ├── 404.html                # Custom error page
-├── content.json            # Content data reference
 ├── .htaccess               # Apache config (HTTPS, compression, security)
 ├── .gitignore
 └── README.md
@@ -94,7 +93,7 @@ File permissions: files `644`, directories `755`.
 
 ## Adding Content
 
-Edit the relevant HTML file and add a new `<article class="content-item">` block to the content grid. Use `content.json` as a reference for the data structure.
+Edit the relevant HTML file and add a new card block to the content grid. Copy an existing card, update the title, description, date, and tags.
 
 ---
 
