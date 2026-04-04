@@ -27,18 +27,21 @@
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Clean URLs — serve /fiction as /fiction.html etc.
+    # Clean URLs — serve /fiction as /fiction.html (top-level slugs only, no slashes)
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}.html -f
-    RewriteRule ^(.*)$ $1.html [L]
+    RewriteCond %{REQUEST_URI} !^/[^/]+/   [NC]
+    RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+    RewriteRule ^([^/]+)$ $1.html [L]
 </IfModule>
 
 # -----------------------------------------------
 # Custom Error Pages
 # -----------------------------------------------
 ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
 ErrorDocument 500 /404.html
+ErrorDocument 503 /404.html
 
 # -----------------------------------------------
 # Security Headers
