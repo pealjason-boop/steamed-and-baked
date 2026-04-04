@@ -3,27 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SteamedAndBaked - Experimental fiction, poetry, and comics in a dark psychedelic neon-cyberpunk aesthetic">
-    <meta name="keywords" content="fiction, poetry, comics, cyberpunk, experimental writing, dark aesthetic">
-    
-    <title>SteamedAndBaked | Digital Showcase</title>
-    
+    <meta name="description" content="SteamedAndBaked — Experimental fiction, poetry, comics, essays, and videos in a dark psychedelic neon-cyberpunk aesthetic.">
+    <meta name="keywords" content="fiction, poetry, comics, essays, videos, cyberpunk, experimental writing, dark aesthetic">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <title>SteamedAndBaked | Consume the Unconventional</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://steamedandbaked.net/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
     <!-- Cyberpunk Stylesheet -->
     <link rel="stylesheet" href="/css/cyberpunk.css">
-    
+
     <!-- Google Fonts: Outfit + Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
+
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <!-- Open Graph -->
-    <meta property="og:title" content="SteamedAndBaked | Digital Showcase">
-    <meta property="og:description" content="Experimental fiction, poetry, and comics in a dark cyberpunk aesthetic">
+    <meta property="og:title" content="SteamedAndBaked | Consume the Unconventional">
+    <meta property="og:description" content="Experimental fiction, poetry, comics, and essays in a dark cyberpunk aesthetic.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://steamedandbaked.net">
+    <meta property="og:url" content="https://steamedandbaked.net/">
+    <meta property="og:image" content="https://steamedandbaked.net/images/brand-overview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SteamedAndBaked | Consume the Unconventional">
+    <meta name="twitter:description" content="Experimental fiction, poetry, comics, and essays in a dark cyberpunk aesthetic.">
+    <meta name="twitter:image" content="https://steamedandbaked.net/images/brand-overview.png">
 </head>
 <body>
 
@@ -32,23 +48,23 @@
          ===================== -->
     <header class="site-header">
         <div class="header-logo">
-            <a href="/"><img src="/images/logo-main.png" alt="Steamed and Baked" class="logo-img"></a>
+            <a href="/"><img src="/images/logo-main.png" alt="SteamedAndBaked" class="logo-img" width="320" height="160"></a>
         </div>
-        <nav class="site-nav">
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+        <nav class="site-nav" aria-label="Main navigation">
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu" id="nav-menu" role="list">
                 <li><a href="/fiction.html" class="nav-link">Stories</a></li>
-                <li class="nav-pipe">|</li>
+                <li class="nav-pipe" aria-hidden="true">|</li>
                 <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
-                <li class="nav-pipe">|</li>
+                <li class="nav-pipe" aria-hidden="true">|</li>
                 <li><a href="/comics.html" class="nav-link">Comics</a></li>
-                <li class="nav-pipe">|</li>
+                <li class="nav-pipe" aria-hidden="true">|</li>
                 <li><a href="/essays.html" class="nav-link">Essays</a></li>
-                <li class="nav-pipe">|</li>
+                <li class="nav-pipe" aria-hidden="true">|</li>
                 <li><a href="/videos.html" class="nav-link">Videos</a></li>
-                <li class="nav-pipe">|</li>
+                <li class="nav-pipe" aria-hidden="true">|</li>
                 <li><a href="/about.html" class="nav-link">About</a></li>
             </ul>
         </nav>
@@ -57,8 +73,8 @@
     <!-- =====================
          HERO BANNER
          ===================== -->
-    <section class="hero-banner">
-        <div class="hero-banner-img" style="background-image: url('/images/hero-arcade.png');"></div>
+    <section class="hero-banner" aria-label="Hero banner">
+        <div class="hero-banner-img" style="background-image: url('/images/hero-arcade.png');" role="img" aria-label="Hero background image"></div>
         <div class="hero-banner-overlay"></div>
         <div class="hero-banner-content">
             <h1 class="hero-headline">CONSUME THE UNCONVENTIONAL.</h1>
@@ -69,59 +85,59 @@
     <!-- =====================
          LATEST DISCOVERIES
          ===================== -->
-    <section class="discoveries">
+    <section class="discoveries" aria-labelledby="discoveries-heading">
         <div class="discoveries-container">
-            <h2 class="discoveries-title">LATEST DISCOVERIES</h2>
+            <h2 class="discoveries-title" id="discoveries-heading">LATEST DISCOVERIES</h2>
 
             <div class="discoveries-grid">
 
                 <!-- Card 1: Story -->
-                <div class="disc-card disc-card--purple">
+                <article class="disc-card disc-card--purple">
                     <div class="disc-card-img">
-                        <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=600&q=80" alt="The Quantum Paradox" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                        <img src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=600&q=80" alt="The Quantum Paradox — abstract digital light art" loading="lazy" width="600" height="160" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
                     </div>
                     <div class="disc-card-body">
                         <h3 class="disc-card-title">The Quantum Paradox</h3>
                         <p class="disc-card-desc">A slant story about the consequences of bending time.</p>
                         <a href="/fiction.html" class="disc-btn">READ STORY</a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 2: Poetry -->
-                <div class="disc-card disc-card--pink">
+                <article class="disc-card disc-card--pink">
                     <div class="disc-card-img">
-                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80" alt="Stardust Verses" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&q=80" alt="Stardust Verses — deep space nebula" loading="lazy" width="600" height="160" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
                     </div>
                     <div class="disc-card-body">
                         <h3 class="disc-card-title">Stardust Verses</h3>
                         <p class="disc-card-desc">Experimental poetry from the outer rim.</p>
                         <a href="/poetry.html" class="disc-btn">READ POETRY</a>
                     </div>
-                </div>
+                </article>
 
                 <!-- Card 3: Comics -->
-                <div class="disc-card disc-card--teal">
+                <article class="disc-card disc-card--teal">
                     <div class="disc-card-img">
-                        <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=600&q=80" alt="Neon Wasteland #1" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                        <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f81?w=600&q=80" alt="Neon Wasteland #1 — neon city scene" loading="lazy" width="600" height="160" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
                     </div>
                     <div class="disc-card-body">
                         <h3 class="disc-card-title">Neon Wasteland #1</h3>
                         <p class="disc-card-desc">First issue of the gritty cyberpunk series.</p>
                         <a href="/comics.html" class="disc-btn">READ COMIC</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Card 4: Blog -->
-                <div class="disc-card disc-card--purple">
+                <!-- Card 4: Essays -->
+                <article class="disc-card disc-card--purple">
                     <div class="disc-card-img">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="Editor's Note" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80" alt="Editor's Note — laptop and ideas" loading="lazy" width="600" height="160" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
                     </div>
                     <div class="disc-card-body">
                         <h3 class="disc-card-title">Editor's Note: The Future of Fiction</h3>
                         <p class="disc-card-desc">Thoughts on the evolving landscape of sci-fi.</p>
                         <a href="/essays.html" class="disc-btn">READ POST</a>
                     </div>
-                </div>
+                </article>
 
             </div>
         </div>
@@ -132,18 +148,19 @@
          ===================== -->
     <footer class="site-footer">
         <div class="site-footer-inner">
-            <div class="footer-left">
-                <a href="/about.html" class="footer-link">About Us</a>
+            <nav class="footer-left" aria-label="Footer navigation">
+                <a href="/about.html" class="footer-link">About</a>
                 <a href="/videos.html" class="footer-link">Videos</a>
-                <a href="/essays.html" class="footer-link">Submit Content</a>
-                <a href="/about.html" class="footer-link">Contact</a>
-            </div>
+                <a href="/essays.html" class="footer-link">Essays</a>
+                <a href="mailto:contact@steamedandbaked.net" class="footer-link">Contact</a>
+            </nav>
             <div class="footer-right">
-                <a href="#" class="footer-social" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="footer-social" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="footer-social" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com" class="footer-social" aria-label="Facebook" rel="noopener noreferrer" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://twitter.com" class="footer-social" aria-label="Twitter / X" rel="noopener noreferrer" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://instagram.com" class="footer-social" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             </div>
         </div>
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> SteamedAndBaked.net &mdash; Consume the Unconventional</p>
     </footer>
 
     <script src="/js/main.js"></script>

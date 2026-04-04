@@ -1,15 +1,15 @@
 /**
- * SteamedAndBaked.com v3.0 - Cyberpunk Edition
+ * SteamedAndBaked.net v3.1 — Cyberpunk Edition
  * Main JavaScript functionality
  */
 
-(function() {
+(function () {
     'use strict';
-    
+
     // ========================================
     // INITIALIZATION
     // ========================================
-    
+
     function init() {
         setupNavigation();
         setCurrentYear();
@@ -18,30 +18,31 @@
         setupGlitchEffect();
         initializeAnimations();
     }
-    
+
     // ========================================
     // NAVIGATION
     // ========================================
-    
+
     function setupNavigation() {
         const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        
+        const navMenu   = document.getElementById('nav-menu');
+
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
+                const isOpen = navMenu.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
                 const icon = navToggle.querySelector('i');
                 if (icon) {
-                    icon.classList.toggle('fa-bars');
-                    icon.classList.toggle('fa-times');
+                    icon.classList.toggle('fa-bars',  !isOpen);
+                    icon.classList.toggle('fa-times', isOpen);
                 }
             });
-            
-            // Close menu on link click
-            const navLinks = navMenu.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
+
+            // Close menu on nav-link click
+            navMenu.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                     const icon = navToggle.querySelector('i');
                     if (icon) {
                         icon.classList.add('fa-bars');
@@ -49,152 +50,118 @@
                     }
                 });
             });
-            
-            // Close on escape key
+
+            // Close on Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
                     const icon = navToggle.querySelector('i');
                     if (icon) {
                         icon.classList.add('fa-bars');
                         icon.classList.remove('fa-times');
                     }
+                    navToggle.focus();
                 }
             });
         }
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
                 if (href !== '#' && href.length > 1) {
-                    e.preventDefault();
                     const target = document.querySelector(href);
                     if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
             });
         });
     }
-    
+
     // ========================================
     // UTILITY FUNCTIONS
     // ========================================
-    
+
     function setCurrentYear() {
-        const yearElements = document.querySelectorAll('#current-year');
         const currentYear = new Date().getFullYear();
-        yearElements.forEach(el => el.textContent = currentYear);
+        document.querySelectorAll('#current-year').forEach(el => {
+            el.textContent = currentYear;
+        });
     }
-    
+
     // ========================================
     // SCROLL EFFECTS
     // ========================================
-    
+
     function setupScrollEffects() {
-        // Navbar transparency on scroll
+        // Navbar background on scroll
         const navbar = document.querySelector('.navbar');
         if (navbar) {
-            let lastScroll = 0;
-            
-            window.addEventListener('scroll', () => {
-                const currentScroll = window.pageYOffset;
-                
-                if (currentScroll > 100) {
-                    navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-                    navbar.style.backdropFilter = 'blur(20px)';
+            const onScroll = () => {
+                if (window.scrollY > 100) {
+                    navbar.style.background        = 'rgba(10, 10, 15, 0.97)';
+                    navbar.style.backdropFilter    = 'blur(20px)';
                 } else {
-                    navbar.style.background = 'rgba(10, 10, 15, 0.9)';
-                    navbar.style.backdropFilter = 'blur(10px)';
+                    navbar.style.background        = 'rgba(10, 10, 15, 0.9)';
+                    navbar.style.backdropFilter    = 'blur(10px)';
                 }
-                
-                lastScroll = currentScroll;
-            });
-        }
-        
-        // Parallax effect on hero
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = scrolled * 0.5;
-                hero.style.transform = `translateY(${parallax}px)`;
-            });
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
         }
     }
-    
+
     // ========================================
-    // CARD HOVER EFFECTS
+    // CARD HOVER (3-D TILT)
     // ========================================
-    
+
     function setupCardHoverEffects() {
-        const cards = document.querySelectorAll('.card, .content-item');
-        
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transition = 'all 0.3s ease';
-            });
-            
-            card.addEventListener('mousemove', function(e) {
-                const rect = this.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
+        // Respect reduced-motion preference
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+
+        document.querySelectorAll('.card, .content-item').forEach(card => {
+            card.addEventListener('mousemove', function (e) {
+                const rect    = this.getBoundingClientRect();
+                const x       = e.clientX - rect.left;
+                const y       = e.clientY - rect.top;
+                const centerX = rect.width  / 2;
                 const centerY = rect.height / 2;
-                
                 const rotateX = (y - centerY) / 20;
                 const rotateY = (centerX - x) / 20;
-                
                 this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
             });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = '';
             });
         });
     }
-    
+
     // ========================================
     // GLITCH EFFECT
     // ========================================
-    
+
     function setupGlitchEffect() {
-        const glitchElements = document.querySelectorAll('.glitch');
-        
-        glitchElements.forEach(element => {
-            const text = element.textContent;
-            element.setAttribute('data-text', text);
-            
-            // Random glitch trigger
-            setInterval(() => {
-                if (Math.random() > 0.95) {
-                    element.style.animation = 'none';
-                    setTimeout(() => {
-                        element.style.animation = 'glitch 0.3s infinite';
-                        setTimeout(() => {
-                            element.style.animation = 'glitch 2s infinite';
-                        }, 300);
-                    }, 10);
-                }
-            }, 2000);
+        document.querySelectorAll('.glitch').forEach(element => {
+            if (!element.hasAttribute('data-text')) {
+                element.setAttribute('data-text', element.textContent);
+            }
         });
     }
-    
+
     // ========================================
     // INTERSECTION OBSERVER ANIMATIONS
     // ========================================
-    
+
     function initializeAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
+        // Respect reduced-motion preference
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        if (!('IntersectionObserver' in window)) return;
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -202,21 +169,24 @@
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
-        
-        // Observe cards and content items
-        document.querySelectorAll('.card, .content-item').forEach(element => {
-            element.style.opacity = '0';
-            observer.observe(element);
+        }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+        document.querySelectorAll('.card, .content-item').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
         });
     }
-    
+
     // ========================================
-    // NEON CURSOR EFFECT (Optional)
+    // CUSTOM CURSOR (opt-in)
+    // Uncomment createCursorEffect() below to activate.
     // ========================================
-    
+
     function createCursorEffect() {
+        if (window.matchMedia('(hover: none)').matches) return; // skip touch devices
+
         const cursor = document.createElement('div');
+        cursor.setAttribute('aria-hidden', 'true');
         cursor.style.cssText = `
             position: fixed;
             width: 20px;
@@ -230,187 +200,161 @@
             transition: transform 0.2s ease;
         `;
         document.body.appendChild(cursor);
-        
+
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 10 + 'px';
-            cursor.style.top = e.clientY - 10 + 'px';
+            cursor.style.left = (e.clientX - 10) + 'px';
+            cursor.style.top  = (e.clientY - 10) + 'px';
         });
-        
+
         document.addEventListener('mousedown', () => {
-            cursor.style.transform = 'scale(1.5)';
-            cursor.style.boxShadow = '0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan)';
+            cursor.style.transform  = 'scale(1.5)';
+            cursor.style.boxShadow  = '0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan)';
         });
-        
+
         document.addEventListener('mouseup', () => {
             cursor.style.transform = 'scale(1)';
             cursor.style.boxShadow = 'none';
         });
     }
-    
+
     // ========================================
-    // TYPING EFFECT (For hero subtitle)
+    // TYPING EFFECT (helper utility)
     // ========================================
-    
+
     function typeWriter(element, text, speed = 50) {
         let i = 0;
         element.textContent = '';
         element.style.opacity = '1';
-        
-        function type() {
+        (function type() {
             if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
+                element.textContent += text.charAt(i++);
                 setTimeout(type, speed);
             }
-        }
-        
-        type();
+        })();
     }
-    
+
     // ========================================
-    // KEYBOARD SHORTCUTS
+    // GLITCH TEXT (hover utility)
     // ========================================
-    
-    function setupKeyboardShortcuts() {
-        document.addEventListener('keydown', (e) => {
-            // Ctrl/Cmd + K for quick search (future feature)
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                console.log('Quick search triggered (future feature)');
-            }
-            
-            // Escape to close modals/menus
-            if (e.key === 'Escape') {
-                const activeMenu = document.querySelector('.nav-menu.active');
-                if (activeMenu) {
-                    activeMenu.classList.remove('active');
-                }
-            }
-        });
-    }
-    
-    // ========================================
-    // RANDOM GLITCH TEXT
-    // ========================================
-    
+
     function glitchText(element) {
-        const chars = '!<>-_\\/[]{}—=+*^?#________';
+        const chars        = '!<>-_\\/[]{}—=+*^?#________';
         const originalText = element.textContent;
-        let iterations = 0;
-        
+        let   iterations   = 0;
+
         const interval = setInterval(() => {
             element.textContent = originalText
                 .split('')
                 .map((char, index) => {
-                    if (index < iterations) {
-                        return originalText[index];
-                    }
+                    if (index < iterations) return originalText[index];
                     return chars[Math.floor(Math.random() * chars.length)];
                 })
                 .join('');
-            
+
             iterations += 1 / 3;
-            
+
             if (iterations >= originalText.length) {
                 clearInterval(interval);
                 element.textContent = originalText;
             }
         }, 30);
     }
-    
+
     // ========================================
-    // PERFORMANCE MONITORING
+    // PERFORMANCE LOGGING
     // ========================================
-    
-    function monitorPerformance() {
-        if ('performance' in window && 'getEntriesByType' in window.performance) {
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    const perfData = performance.timing;
-                    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-                    const domContentLoadedTime = perfData.domContentLoadedEventEnd - perfData.navigationStart;
-                    
-                    console.log(`%c🚀 Performance Metrics`, 'color: #00ffff; font-size: 14px; font-weight: bold;');
-                    console.log(`Page Load: ${pageLoadTime}ms`);
-                    console.log(`DOM Ready: ${domContentLoadedTime}ms`);
-                }, 0);
-            });
+
+    function logPerformance() {
+        if (!('performance' in window) || !('getEntriesByType' in window.performance)) return;
+
+        // Use PerformanceObserver for the navigation entry (modern approach)
+        const navEntries = performance.getEntriesByType('navigation');
+        if (navEntries.length > 0) {
+            const nav  = navEntries[0];
+            const load = Math.round(nav.loadEventEnd - nav.startTime);
+            const dom  = Math.round(nav.domContentLoadedEventEnd - nav.startTime);
+            if (load > 0) {
+                console.log('%c\uD83D\uDE80 Performance Metrics', 'color:#00ffff;font-size:14px;font-weight:bold;');
+                console.log('Page Load: ' + load + 'ms');
+                console.log('DOM Ready: ' + dom + 'ms');
+            }
         }
     }
-    
+
     // ========================================
-    // EASTER EGGS
+    // EASTER EGG — Konami Code
     // ========================================
-    
-    function setupEasterEggs() {
-        // Konami Code easter egg
-        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        let konamiIndex = 0;
-        
+
+    function setupEasterEgg() {
+        const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+        let idx = 0;
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
+            if (e.key === konamiCode[idx]) {
+                idx++;
+                if (idx === konamiCode.length) {
                     activateEasterEgg();
-                    konamiIndex = 0;
+                    idx = 0;
                 }
             } else {
-                konamiIndex = 0;
+                idx = 0;
             }
         });
     }
-    
+
     function activateEasterEgg() {
-        document.body.style.animation = 'rainbow 2s linear infinite';
-        
         const style = document.createElement('style');
-        style.textContent = `
-            @keyframes rainbow {
-                0% { filter: hue-rotate(0deg); }
-                100% { filter: hue-rotate(360deg); }
-            }
-        `;
+        style.textContent = '@keyframes _rainbow{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}';
         document.head.appendChild(style);
-        
+        document.body.style.animation = '_rainbow 2s linear infinite';
         setTimeout(() => {
             document.body.style.animation = '';
             style.remove();
         }, 5000);
-        
-        console.log('%c🎉 EASTER EGG ACTIVATED!', 'color: #ff00ff; font-size: 20px; font-weight: bold;');
+        console.log('%c\uD83C\uDF89 EASTER EGG ACTIVATED!', 'color:#ff00ff;font-size:20px;font-weight:bold;');
     }
-    
+
     // ========================================
-    // INIT ON DOM READY
+    // KEYBOARD SHORTCUTS
     // ========================================
-    
+
+    function setupKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Ctrl/Cmd + K — quick search (future feature placeholder)
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                // Reserved for future search modal
+            }
+        });
+    }
+
+    // ========================================
+    // BOOT SEQUENCE
+    // ========================================
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
-    
-    // Optional: Enable custom cursor
-    // Uncomment to activate
-    // createCursorEffect();
-    
-    // Setup keyboard shortcuts
+
     setupKeyboardShortcuts();
-    
-    // Setup easter eggs
-    setupEasterEggs();
-    
-    // Monitor performance
-    monitorPerformance();
-    
-    // Expose some functions globally for debugging
+    setupEasterEgg();
+
+    window.addEventListener('load', logPerformance);
+
+    // Uncomment to enable neon cursor:
+    // createCursorEffect();
+
+    // Public API
     window.SteamedAndBaked = {
         glitchText,
-        version: '3.0',
+        typeWriter,
+        version:   '3.1',
         aesthetic: 'cyberpunk'
     };
-    
-    console.log('%cSteamedAndBaked v3.0', 'color: #00ffff; font-size: 24px; font-weight: bold; text-shadow: 0 0 10px #00ffff;');
-    console.log('%cDark Psychedelic Neon-Cyberpunk Aesthetic', 'color: #ff00ff; font-size: 12px;');
-    
+
+    console.log('%cSteamedAndBaked v3.1', 'color:#00ffff;font-size:24px;font-weight:bold;text-shadow:0 0 10px #00ffff;');
+    console.log('%cDark Psychedelic Neon-Cyberpunk Aesthetic', 'color:#ff00ff;font-size:12px;');
+
 })();

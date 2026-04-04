@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | SteamedAndBaked</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0a0a0f">
+    <title>404 &mdash; Page Not Found | SteamedAndBaked</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
     <link rel="stylesheet" href="/css/cyberpunk.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo"><img src="/images/logo-main.png" alt="Steamed and Baked" class="logo-img"></a>
+            <a href="/" class="logo"><img src="/images/logo-main.png" alt="SteamedAndBaked — Return Home" class="logo-img" width="160" height="80"></a>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="hero-content">
-            <div style="font-size: 8rem; color: var(--neon-cyan); text-shadow: var(--glow-cyan); margin-bottom: var(--space-6);">
-                404
+    <main>
+        <section class="hero" aria-labelledby="error-heading">
+            <div class="hero-content">
+                <div style="font-size: 8rem; color: var(--neon-cyan); text-shadow: var(--glow-cyan); margin-bottom: var(--space-6);" aria-hidden="true">
+                    404
+                </div>
+                <h1 id="error-heading" class="glitch" data-text="PAGE NOT FOUND" style="font-size: var(--text-4xl);">PAGE NOT FOUND</h1>
+                <p class="hero-subtitle">
+                    The page you&rsquo;re looking for doesn&rsquo;t exist in this reality.<br>
+                    Perhaps it&rsquo;s in another dimension?
+                </p>
+                <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-8);">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-home" aria-hidden="true"></i> Return Home
+                    </a>
+                    <a href="/fiction.html" class="btn btn-secondary">
+                        <i class="fas fa-book" aria-hidden="true"></i> Browse Content
+                    </a>
+                </div>
             </div>
-            <h1 class="glitch" data-text="PAGE NOT FOUND" style="font-size: var(--text-4xl);">PAGE NOT FOUND</h1>
-            <p class="hero-subtitle">
-                The page you're looking for doesn't exist in this reality.<br>
-                Perhaps it's in another dimension?
-            </p>
-            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; margin-top: var(--space-8);">
-                <a href="/" class="btn btn-primary">
-                    <i class="fas fa-home"></i> Return Home
-                </a>
-                <a href="/fiction.html" class="btn btn-secondary">
-                    <i class="fas fa-book"></i> Browse Content
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="/js/main.js"></script>
 </body>

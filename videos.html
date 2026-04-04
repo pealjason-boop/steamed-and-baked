@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Videos - SteamedAndBaked">
+    <meta name="description" content="Videos — SteamedAndBaked. Experimental video and moving image from the unconventional underground.">
     <meta name="keywords" content="videos, experimental video, cyberpunk, dark art, steamed and baked">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0f">
 
     <title>Videos | SteamedAndBaked</title>
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://steamedandbaked.net/videos">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
 
     <!-- Cyberpunk Stylesheet -->
     <link rel="stylesheet" href="/css/cyberpunk.css">
@@ -16,30 +25,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Videos | SteamedAndBaked">
-    <meta property="og:description" content="Videos from the unconventional underground">
+    <meta property="og:description" content="Experimental video and moving image from the unconventional underground.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://steamedandbaked.net/videos.html">
+    <meta property="og:url" content="https://steamedandbaked.net/videos">
+    <meta property="og:image" content="https://steamedandbaked.net/images/brand-overview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Videos | SteamedAndBaked">
+    <meta name="twitter:description" content="Experimental video and moving image from the unconventional underground.">
+    <meta name="twitter:image" content="https://steamedandbaked.net/images/brand-overview.png">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo"><img src="/images/logo-main.png" alt="Steamed and Baked" class="logo-img"></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+            <a href="/" class="logo"><img src="/images/logo-main.png" alt="SteamedAndBaked" class="logo-img" width="160" height="80"></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu" id="nav-menu" role="list">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/fiction.html" class="nav-link">Stories</a></li>
                 <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
                 <li><a href="/comics.html" class="nav-link">Comics</a></li>
                 <li><a href="/essays.html" class="nav-link">Essays</a></li>
-                <li><a href="/videos.html" class="nav-link active">Videos</a></li>
+                <li><a href="/videos.html" class="nav-link active" aria-current="page">Videos</a></li>
                 <li><a href="/about.html" class="nav-link">About</a></li>
             </ul>
         </div>
@@ -47,77 +63,85 @@
 
     <!-- Page Header -->
     <section class="page-header">
-        <div class="page-header-content">
-            <h1 class="page-title"><i class="fas fa-film"></i> Videos</h1>
+        <div class="container">
+            <h1 class="page-title text-gradient">
+                <i class="fas fa-film" style="color: var(--neon-cyan);" aria-hidden="true"></i>
+                Videos
+            </h1>
             <p class="page-subtitle">Moving pictures from the unconventional underground</p>
         </div>
     </section>
 
     <!-- Videos Grid -->
-    <main class="content-main">
-        <div class="content-container">
+    <main>
+        <section class="section" aria-labelledby="videos-heading">
+            <h2 id="videos-heading" class="sr-only">Videos Archive</h2>
+            <div class="container">
+                <div class="content-grid" id="videos-grid">
 
-            <div class="content-grid" id="videos-grid">
-
-                <!-- Placeholder card 1 -->
-                <article class="content-item">
-                    <div class="content-thumbnail content-thumbnail--video" style="background: linear-gradient(135deg, #1a0a2e 0%, #0a1628 100%);">
-                        <i class="fas fa-play-circle" style="font-size:3rem; color: var(--neon-cyan); opacity:0.6;"></i>
-                    </div>
-                    <div class="content-body">
-                        <div class="content-meta">
-                            <span class="content-category" style="color: var(--neon-cyan);">Video</span>
-                            <span class="content-date">Coming Soon</span>
+                    <!-- Placeholder card 1 -->
+                    <article class="content-item">
+                        <div class="content-thumbnail content-thumbnail--video" style="background: linear-gradient(135deg, #1a0a2e 0%, #0a1628 100%); display: flex; align-items: center; justify-content: center;" role="img" aria-label="First Transmission video placeholder">
+                            <i class="fas fa-play-circle" style="font-size: 3rem; color: var(--neon-cyan); opacity: 0.6;" aria-hidden="true"></i>
                         </div>
-                        <h2 class="content-title">First Transmission</h2>
-                        <p class="content-excerpt">The first video dispatch from SteamedAndBaked — stay tuned.</p>
-                        <div class="content-tags">
-                            <span class="tag">Experimental</span>
-                            <span class="tag">Cyberpunk</span>
+                        <div class="content-body">
+                            <div class="content-meta">
+                                <span class="content-category" style="color: var(--neon-cyan);">
+                                    <i class="fas fa-film" aria-hidden="true"></i> Video
+                                </span>
+                                <span class="content-date">Coming Soon</span>
+                            </div>
+                            <h3 class="content-title">First Transmission</h3>
+                            <p class="content-excerpt">The first video dispatch from SteamedAndBaked &mdash; stay tuned.</p>
+                            <div class="content-tags">
+                                <span class="tag">Experimental</span>
+                                <span class="tag">Cyberpunk</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Placeholder card 2 -->
-                <article class="content-item">
-                    <div class="content-thumbnail content-thumbnail--video" style="background: linear-gradient(135deg, #0a1a0a 0%, #1a0a2e 100%);">
-                        <i class="fas fa-play-circle" style="font-size:3rem; color: var(--neon-magenta); opacity:0.6;"></i>
-                    </div>
-                    <div class="content-body">
-                        <div class="content-meta">
-                            <span class="content-category" style="color: var(--neon-magenta);">Video</span>
-                            <span class="content-date">Coming Soon</span>
+                    <!-- Placeholder card 2 -->
+                    <article class="content-item">
+                        <div class="content-thumbnail content-thumbnail--video" style="background: linear-gradient(135deg, #0a1a0a 0%, #1a0a2e 100%); display: flex; align-items: center; justify-content: center;" role="img" aria-label="Signal From the Noise video placeholder">
+                            <i class="fas fa-play-circle" style="font-size: 3rem; color: var(--neon-magenta); opacity: 0.6;" aria-hidden="true"></i>
                         </div>
-                        <h2 class="content-title">Signal From the Noise</h2>
-                        <p class="content-excerpt">A visual poem carved from static and colour.</p>
-                        <div class="content-tags">
-                            <span class="tag">Visual Art</span>
-                            <span class="tag">Poetry</span>
+                        <div class="content-body">
+                            <div class="content-meta">
+                                <span class="content-category" style="color: var(--neon-magenta);">
+                                    <i class="fas fa-film" aria-hidden="true"></i> Video
+                                </span>
+                                <span class="content-date">Coming Soon</span>
+                            </div>
+                            <h3 class="content-title">Signal From the Noise</h3>
+                            <p class="content-excerpt">A visual poem carved from static and colour.</p>
+                            <div class="content-tags">
+                                <span class="tag">Visual Art</span>
+                                <span class="tag">Poetry</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-            </div><!-- /.content-grid -->
-
-        </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="site-footer">
         <div class="site-footer-inner">
-            <div class="footer-left">
+            <nav class="footer-left" aria-label="Footer navigation">
                 <a href="/about.html" class="footer-link">About</a>
                 <a href="/fiction.html" class="footer-link">Stories</a>
                 <a href="/poetry.html" class="footer-link">Poetry</a>
                 <a href="/comics.html" class="footer-link">Comics</a>
                 <a href="/essays.html" class="footer-link">Essays</a>
                 <a href="/videos.html" class="footer-link">Videos</a>
-            </div>
+            </nav>
             <div class="footer-right">
-                <a href="mailto:contact@steamedandbaked.net" class="footer-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:contact@steamedandbaked.net" class="footer-social" aria-label="Email us"><i class="fas fa-envelope" aria-hidden="true"></i></a>
             </div>
         </div>
-        <p class="footer-copy">&copy; 2026 SteamedAndBaked.net — Consume the Unconventional</p>
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> SteamedAndBaked.net &mdash; Consume the Unconventional</p>
     </footer>
 
     <script src="/js/main.js"></script>

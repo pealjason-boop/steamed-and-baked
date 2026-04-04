@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /.git/
+Disallow: /.htaccess
+
+Sitemap: https://steamedandbaked.net/sitemap.xml

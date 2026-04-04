@@ -3,35 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About SteamedAndBaked - A digital showcase for experimental creative work">
+    <meta name="description" content="About SteamedAndBaked — a digital showcase for experimental fiction, poetry, comics, essays, and videos.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0f">
+
     <title>About | SteamedAndBaked</title>
-    
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://steamedandbaked.net/about">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+    <!-- Cyberpunk Stylesheet -->
     <link rel="stylesheet" href="/css/cyberpunk.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Font Awesome 6.4 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About | SteamedAndBaked">
+    <meta property="og:description" content="About SteamedAndBaked — a digital showcase for experimental creative work.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://steamedandbaked.net/about">
+    <meta property="og:image" content="https://steamedandbaked.net/images/brand-overview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About | SteamedAndBaked">
+    <meta name="twitter:description" content="About SteamedAndBaked — a digital showcase for experimental creative work.">
+    <meta name="twitter:image" content="https://steamedandbaked.net/images/brand-overview.png">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="/" class="logo"><img src="/images/logo-main.png" alt="Steamed and Baked" class="logo-img"></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
+            <a href="/" class="logo"><img src="/images/logo-main.png" alt="SteamedAndBaked" class="logo-img" width="160" height="80"></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-                        <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu" id="nav-menu" role="list">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/fiction.html" class="nav-link">Stories</a></li>
                 <li><a href="/poetry.html" class="nav-link">Poetry</a></li>
                 <li><a href="/comics.html" class="nav-link">Comics</a></li>
                 <li><a href="/essays.html" class="nav-link">Essays</a></li>
                 <li><a href="/videos.html" class="nav-link">Videos</a></li>
-                <li><a href="/about.html" class="nav-link active">About</a></li>
+                <li><a href="/about.html" class="nav-link active" aria-current="page">About</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero" style="min-height: 50vh;">
+    <section class="hero" style="min-height: 50vh;" aria-label="About hero">
         <div class="hero-content">
             <h1 class="hero-title" style="font-size: var(--text-4xl);">ABOUT THIS SPACE</h1>
             <p class="hero-subtitle">Origin, purpose, and philosophy</p>
@@ -39,152 +69,118 @@
     </section>
 
     <!-- About Content -->
-    <section class="section">
-        <div class="container container-narrow">
-            <div class="card" style="padding: var(--space-12);">
-                <h2 class="text-gradient">What Is SteamedAndBaked?</h2>
-                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
-                    <strong style="color: var(--primary);">SteamedAndBaked</strong> is a digital showcase for experimental creative work. 
-                    This space exists at the intersection of traditional narrative forms and contemporary digital aesthetics, 
-                    exploring themes of technology, consciousness, and the liminal spaces between realities.
-                </p>
-                
-                <h3 style="color: var(--neon-magenta); margin-top: var(--space-8);">
-                    <i class="fas fa-user-secret"></i> The Creator
-                </h3>
-                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
-                    All content on this site is created by a single anonymous individual. The choice to remain anonymous 
-                    allows the work to speak for itself, free from the constraints of personal branding and algorithmic pressures.
-                </p>
-                
-                <h3 style="color: var(--neon-cyan); margin-top: var(--space-8);">
-                    <i class="fas fa-paint-brush"></i> Aesthetic Philosophy
-                </h3>
-                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
-                    The visual design embraces a <strong style="color: var(--primary);">dark psychedelic neon-cyberpunk</strong> aesthetic. 
-                    This choice reflects the content's exploration of digital consciousness, technological alienation, and the beauty 
-                    found in synthetic environments. The glowing neon against deep darkness mirrors the contrast between 
-                    human creativity and machine logic.
-                </p>
-                
-                <h3 style="color: var(--neon-purple); margin-top: var(--space-8);">
-                    <i class="fas fa-book-open"></i> Content Approach
-                </h3>
-                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
-                    The work here prioritizes:
-                </p>
-                <ul style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 2; margin-left: var(--space-8);">
-                    <li><i class="fas fa-check" style="color: var(--neon-cyan);"></i> Experimentation over convention</li>
-                    <li><i class="fas fa-check" style="color: var(--neon-magenta);"></i> Authenticity over engagement metrics</li>
-                    <li><i class="fas fa-check" style="color: var(--neon-purple);"></i> Depth over viral potential</li>
-                    <li><i class="fas fa-check" style="color: var(--neon-green);"></i> Community over audience</li>
-                </ul>
-                
-                <h3 style="color: var(--neon-green); margin-top: var(--space-8);">
-                    <i class="fas fa-users"></i> Community Engagement
-                </h3>
-                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
-                    This space welcomes anonymous participation and genuine dialogue. Comments and discussions are encouraged, 
-                    with moderation focused on maintaining quality discourse rather than maximizing engagement.
-                </p>
-                
-                <h3 style="color: var(--neon-orange); margin-top: var(--space-8);">
-                    <i class="fas fa-code"></i> Technical Details
-                </h3>
-                <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
-                    Built with modern web standards, this site prioritizes:
-                </p>
-                <ul style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 2; margin-left: var(--space-8);">
-                    <li><i class="fas fa-bolt" style="color: var(--neon-yellow);"></i> Performance and speed</li>
-                    <li><i class="fas fa-universal-access" style="color: var(--neon-cyan);"></i> Accessibility</li>
-                    <li><i class="fas fa-shield-alt" style="color: var(--neon-magenta);"></i> Privacy and security</li>
-                    <li><i class="fas fa-leaf" style="color: var(--neon-green);"></i> Minimal resource usage</li>
-                </ul>
-                
-                <div style="text-align: center; margin-top: var(--space-12);">
-                    <a href="/" class="btn btn-primary">
-                        <i class="fas fa-arrow-left"></i> Return Home
-                    </a>
-                    <a href="/fiction.html" class="btn btn-secondary" style="margin-left: var(--space-4);">
-                        <i class="fas fa-book"></i> Browse Content
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="section" style="background: var(--bg-secondary);">
-        <div class="container container-narrow text-center">
-            <h2 class="text-gradient">Get In Touch</h2>
-            <p style="color: var(--text-secondary); font-size: var(--text-lg); margin-bottom: var(--space-8);">
-                Questions, collaborations, or feedback? Reach out through these channels:
-            </p>
-            <div style="display: flex; gap: var(--space-6); justify-content: center; flex-wrap: wrap;">
-                <a href="mailto:contact@steamedandbaked.net" class="btn btn-ghost">
-                    <i class="fas fa-envelope"></i> Email
-                </a>
-                <a href="#" class="btn btn-ghost">
-                    <i class="fab fa-twitter"></i> Twitter
-                </a>
-                <a href="/about.html" class="btn btn-ghost">
-                    <i class="fas fa-rss"></i> RSS Feed
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>STEAMED<span style="color: var(--neon-magenta);">&</span>BAKED</h4>
-                    <p style="color: var(--text-secondary); line-height: 1.8;">
-                        A digital showcase for experimental fiction, poetry, and visual narratives.
+    <main>
+        <section class="section" aria-labelledby="about-heading">
+            <div class="container container-narrow">
+                <div class="card" style="padding: var(--space-12);">
+                    <h2 class="text-gradient" id="about-heading">What Is SteamedAndBaked?</h2>
+                    <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                        <strong style="color: var(--primary);">SteamedAndBaked</strong> is a digital showcase for experimental creative work.
+                        This space exists at the intersection of traditional narrative forms and contemporary digital aesthetics,
+                        exploring themes of technology, consciousness, and the liminal spaces between realities.
                     </p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Explore</h4>
-                    <ul class="footer-links">
-                        <li><a href="/fiction.html">Fiction</a></li>
-                        <li><a href="/poetry.html">Poetry</a></li>
-                        <li><a href="/comics.html">Comics & Art</a></li>
-                        <li><a href="/fiction.html">Archive</a></li>
+
+                    <h3 style="color: var(--neon-magenta); margin-top: var(--space-8);">
+                        <i class="fas fa-user-secret" aria-hidden="true"></i> The Creator
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                        All content on this site is created by a single anonymous individual. The choice to remain anonymous
+                        allows the work to speak for itself, free from the constraints of personal branding and algorithmic pressures.
+                    </p>
+
+                    <h3 style="color: var(--neon-cyan); margin-top: var(--space-8);">
+                        <i class="fas fa-paint-brush" aria-hidden="true"></i> Aesthetic Philosophy
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                        The visual design embraces a <strong style="color: var(--primary);">dark psychedelic neon-cyberpunk</strong> aesthetic.
+                        This choice reflects the content&rsquo;s exploration of digital consciousness, technological alienation, and the beauty
+                        found in synthetic environments. The glowing neon against deep darkness mirrors the contrast between
+                        human creativity and machine logic.
+                    </p>
+
+                    <h3 style="color: var(--neon-purple); margin-top: var(--space-8);">
+                        <i class="fas fa-book-open" aria-hidden="true"></i> Content Approach
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                        The work here prioritizes:
+                    </p>
+                    <ul style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 2; margin-left: var(--space-8);">
+                        <li><i class="fas fa-check" style="color: var(--neon-cyan);" aria-hidden="true"></i> Experimentation over convention</li>
+                        <li><i class="fas fa-check" style="color: var(--neon-magenta);" aria-hidden="true"></i> Authenticity over engagement metrics</li>
+                        <li><i class="fas fa-check" style="color: var(--neon-purple);" aria-hidden="true"></i> Depth over viral potential</li>
+                        <li><i class="fas fa-check" style="color: var(--neon-green);" aria-hidden="true"></i> Community over audience</li>
                     </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Info</h4>
-                    <ul class="footer-links">
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/about.html">Submit</a></li>
-                        <li><a href="/about.html">Privacy</a></li>
-                        <li><a href="/about.html">RSS Feed</a></li>
+
+                    <h3 style="color: var(--neon-green); margin-top: var(--space-8);">
+                        <i class="fas fa-users" aria-hidden="true"></i> Community Engagement
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                        This space welcomes anonymous participation and genuine dialogue. Comments and discussions are encouraged,
+                        with moderation focused on maintaining quality discourse rather than maximizing engagement.
+                    </p>
+
+                    <h3 style="color: var(--neon-orange); margin-top: var(--space-8);">
+                        <i class="fas fa-code" aria-hidden="true"></i> Technical Details
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 1.8;">
+                        Built with modern web standards, this site prioritizes:
+                    </p>
+                    <ul style="color: var(--text-secondary); font-size: var(--text-lg); line-height: 2; margin-left: var(--space-8);">
+                        <li><i class="fas fa-bolt" style="color: var(--neon-yellow);" aria-hidden="true"></i> Performance and speed</li>
+                        <li><i class="fas fa-universal-access" style="color: var(--neon-cyan);" aria-hidden="true"></i> Accessibility</li>
+                        <li><i class="fas fa-shield-alt" style="color: var(--neon-magenta);" aria-hidden="true"></i> Privacy and security</li>
+                        <li><i class="fas fa-leaf" style="color: var(--neon-green);" aria-hidden="true"></i> Minimal resource usage</li>
                     </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div style="display: flex; gap: var(--space-3); margin-top: var(--space-4);">
-                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+
+                    <div style="text-align: center; margin-top: var(--space-12);">
+                        <a href="/" class="btn btn-primary">
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i> Return Home
                         </a>
-                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" style="font-size: var(--text-2xl); color: var(--text-secondary);" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
+                        <a href="/fiction.html" class="btn btn-secondary" style="margin-left: var(--space-4);">
+                            <i class="fas fa-book" aria-hidden="true"></i> Browse Content
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> SteamedAndBaked. All content is original and protected.</p>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="section" style="background: var(--bg-secondary);" aria-labelledby="contact-heading">
+            <div class="container container-narrow text-center">
+                <h2 class="text-gradient" id="contact-heading">Get In Touch</h2>
+                <p style="color: var(--text-secondary); font-size: var(--text-lg); margin-bottom: var(--space-8);">
+                    Questions, collaborations, or feedback? Reach out through these channels:
+                </p>
+                <div style="display: flex; gap: var(--space-6); justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:contact@steamedandbaked.net" class="btn btn-ghost">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> Email
+                    </a>
+                    <a href="https://twitter.com" class="btn btn-ghost" rel="noopener noreferrer" target="_blank">
+                        <i class="fab fa-twitter" aria-hidden="true"></i> Twitter&nbsp;/&nbsp;X
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer-inner">
+            <nav class="footer-left" aria-label="Footer navigation">
+                <a href="/" class="footer-link">Home</a>
+                <a href="/fiction.html" class="footer-link">Fiction</a>
+                <a href="/poetry.html" class="footer-link">Poetry</a>
+                <a href="/comics.html" class="footer-link">Comics</a>
+                <a href="/essays.html" class="footer-link">Essays</a>
+                <a href="/about.html" class="footer-link">About</a>
+            </nav>
+            <div class="footer-right">
+                <a href="https://twitter.com" class="footer-social" aria-label="Twitter / X" rel="noopener noreferrer" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                <a href="https://instagram.com" class="footer-social" aria-label="Instagram" rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://github.com" class="footer-social" aria-label="GitHub" rel="noopener noreferrer" target="_blank"><i class="fab fa-github" aria-hidden="true"></i></a>
             </div>
         </div>
+        <p class="footer-copy">&copy; <span id="current-year">2026</span> SteamedAndBaked.net &mdash; All content is original and protected.</p>
     </footer>
 
     <script src="/js/main.js"></script>
