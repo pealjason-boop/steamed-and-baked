@@ -1202,16 +1202,34 @@ blockquote {
 .disc-card--purple:hover { box-shadow: 0 8px 30px rgba(139, 92, 246, 0.35); }
 .disc-card--pink:hover   { box-shadow: 0 8px 30px rgba(236, 72, 153, 0.35); }
 .disc-card--teal:hover   { box-shadow: 0 8px 30px rgba(20, 184, 166, 0.35); border-color: rgba(20,184,166,0.4); }
+.disc-card--orange:hover { box-shadow: 0 8px 30px rgba(255, 102, 0, 0.35);  border-color: rgba(255,102,0,0.4); }
 
-.disc-card--teal {
-    border-color: rgba(20, 184, 166, 0.35);
-}
+.disc-card--teal   { border-color: rgba(20, 184, 166, 0.35); }
+.disc-card--orange { border-color: rgba(255, 102, 0, 0.35); }
 
 .disc-card-img {
     width: 100%;
     height: 160px;
     overflow: hidden;
     background: linear-gradient(135deg, #1a1a2e, #16213e);
+    position: relative;
+    transition: transform var(--transition-slow);
+}
+
+/* CSS-only gradient thumbnails — no external image dependency */
+.disc-card-img--story  { background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 40%, #2d1b4e 100%); }
+.disc-card-img--poetry { background: linear-gradient(135deg, #0a0d1a 0%, #0d1f3c 50%, #1a2d4e 100%); }
+.disc-card-img--comics { background: linear-gradient(135deg, #0a1a1a 0%, #0a2626 50%, #0d3333 100%); }
+.disc-card-img--essays { background: linear-gradient(135deg, #1a0d00 0%, #2e1500 50%, #3d1f00 100%); }
+
+/* Animated noise texture overlay on card images */
+.disc-card-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 .disc-card-img img {
@@ -1220,6 +1238,10 @@ blockquote {
     object-fit: cover;
     display: block;
     transition: transform var(--transition-slow);
+}
+
+.disc-card:hover .disc-card-img {
+    transform: scale(1.04);
 }
 
 .disc-card:hover .disc-card-img img {
@@ -1291,6 +1313,12 @@ blockquote {
     background: rgba(20, 184, 166, 0.2);
     border-color: #14b8a6;
     color: #5eead4;
+}
+
+.disc-card--orange .disc-btn:hover {
+    background: rgba(255, 102, 0, 0.2);
+    border-color: #ff6600;
+    color: #ffaa66;
 }
 
 /* ========================================
@@ -1368,9 +1396,27 @@ blockquote {
     .discoveries-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-title {
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+    .hero-subtitle {
+        font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    /* Ensure nav touch targets are ≥44px */
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Prevent horizontal overflow */
+    body { overflow-x: hidden; }
+
     .header-logo .logo-img {
         height: 110px;
     }
@@ -1421,6 +1467,40 @@ blockquote {
     .footer-left {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    /* Tap target sizing for mobile */
+    .disc-btn,
+    .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-social {
+        width: 44px;
+        height: 44px;
+    }
+
+    .footer-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Content grid single column */
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Page header padding */
+    .page-header {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .page-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
     }
 }
 
