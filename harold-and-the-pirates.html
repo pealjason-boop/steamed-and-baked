@@ -155,13 +155,16 @@
 
         .chapter-title {
             font-family: 'Outfit', var(--font-heading);
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(2rem, 5vw, 3.2rem);
             font-weight: 800;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-magenta));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ff2dce;
+            text-shadow:
+                0 0 10px rgba(255, 45, 206, 0.9),
+                0 0 25px rgba(255, 45, 206, 0.65),
+                0 0 55px rgba(255, 45, 206, 0.35),
+                0 2px 4px rgba(0, 0, 0, 0.8);
             margin-bottom: var(--space-4);
+            letter-spacing: -0.01em;
         }
 
         .chapter-tagline {
@@ -303,6 +306,40 @@
             cursor: default;
         }
 
+        /* Chapter opening illustration */
+        .chapter-illustration {
+            max-width: 640px;
+            margin: 0 auto var(--space-10);
+            padding: 0 var(--space-6);
+        }
+
+        .chapter-illustration img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 45, 206, 0.18);
+            box-shadow:
+                0 0 0 1px rgba(255, 45, 206, 0.08),
+                0 8px 40px rgba(0, 0, 0, 0.6),
+                0 0 60px rgba(255, 45, 206, 0.06);
+        }
+
+        .chapter-illustration-caption {
+            font-size: var(--text-xs);
+            color: var(--text-muted);
+            text-align: center;
+            padding: var(--space-3) var(--space-4) 0;
+            font-style: italic;
+            letter-spacing: 0.04em;
+        }
+
+        .chapter-illustration-caption::first-letter { all: unset; }
+
+        @media (max-width: 768px) {
+            .chapter-illustration { padding: 0 var(--space-4); }
+        }
+
         /* Crew portrait sidebar card */
         .crew-card {
             background: var(--bg-secondary);
@@ -422,6 +459,20 @@
                 <h2 class="chapter-title">Sex on the Beach</h2>
                 <p class="chapter-tagline">Harold had been to the beach plenty of times. None of those times had involved a submarine.</p>
             </header>
+        </div>
+
+        <!-- =====================
+             CHAPTER ILLUSTRATION
+             ===================== -->
+        <div class="chapter-illustration" aria-label="Harold passed out on the beach, surrounded by empty bottles and cocktail glasses">
+            <img
+                src="/images/harold-passed-out.png"
+                alt="Harold lying spread-eagle on the sand in his tropical swim trunks, sunburned and unconscious, surrounded by empty beer bottles, cocktail glasses, sunscreen and flip-flops — the aftermath of a very eventful Tuesday"
+                width="1024"
+                height="1024"
+                loading="lazy"
+            >
+            <p class="chapter-illustration-caption">Harold, approximately four hours before he found himself on a submarine.</p>
         </div>
 
         <!-- =====================
