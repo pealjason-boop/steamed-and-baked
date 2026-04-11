@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Harold and the Pirates — a dark comedy adventure about a ragtag crew, a stolen submarine, and one very confused Harold. Chapter 1: Sex on the Beach.">
+    <meta name="description" content="Harold and the Pirates — a dark comedy about a man who drinks himself horizontal at a couples resort alone, then wakes up on a submarine. Chapter 1: Sex on the Beach.">
     <meta name="keywords" content="Harold and the Pirates, fiction, dark comedy, submarine, adventure, cyberpunk fiction, SteamedAndBaked">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0a0a0f">
@@ -306,6 +306,49 @@
             cursor: default;
         }
 
+        /* Foreword */
+        .foreword-header {
+            border-bottom: 1px solid rgba(0,255,255,0.1);
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-4);
+        }
+
+        .foreword-title {
+            font-family: 'Outfit', var(--font-heading);
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 800;
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+            letter-spacing: 0.02em;
+        }
+
+        .foreword-poem {
+            border-left-color: var(--neon-magenta);
+            background: rgba(255,45,206,0.04);
+            margin-top: var(--space-6);
+        }
+
+        .foreword-poem p {
+            color: var(--text-primary);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-3);
+        }
+
+        .foreword-poem p:last-child { margin-bottom: 0; }
+
+        .foreword-poem p::first-letter { all: unset; }
+
+        .poem-title {
+            font-family: 'Outfit', var(--font-heading);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: var(--neon-magenta);
+            text-transform: uppercase;
+            margin-bottom: var(--space-4) !important;
+        }
+
         /* Chapter opening illustration */
         .chapter-illustration-wrap {
             width: 100%;
@@ -441,7 +484,7 @@
                 <h1 class="story-hero-title">Harold and the Pirates</h1>
                 <div class="story-hero-meta">
                     <span><i class="fas fa-calendar" aria-hidden="true"></i> <time datetime="2026-04-11">Apr 11, 2026</time></span>
-                    <span><i class="fas fa-clock" aria-hidden="true"></i> 14 min read</span>
+                    <span><i class="fas fa-clock" aria-hidden="true"></i> 8 min read</span>
                     <span><i class="fas fa-layer-group" aria-hidden="true"></i> Chapter 1 of ?</span>
                 </div>
             </div>
@@ -467,8 +510,28 @@
             <header class="chapter-header">
                 <span class="chapter-number">Chapter One</span>
                 <h2 class="chapter-title">Sex on the Beach</h2>
-                <p class="chapter-tagline">Harold had been to the beach plenty of times. None of those times had involved a submarine.</p>
+                <p class="chapter-tagline">The sky was clear blue, and it seemed to cover the entire world in a cheery sort of tropical expanse.</p>
             </header>
+        </div>
+
+        <!-- =====================
+             FOREWORD
+             ===================== -->
+        <div class="story-body" style="padding-bottom: var(--space-10);">
+
+            <header class="foreword-header">
+                <h2 class="foreword-title">Foreword</h2>
+            </header>
+            <p>Hello reader. I want to thank you for at least starting my book. I have started it more than once, stopped, and went back to it. It&rsquo;s either a labor of love or an addiction; I can&rsquo;t tell. I built a little world, and it&rsquo;s nothing without readers. If you read it, than all this work was a labor of love. If you don&rsquo;t, than I did it for the same reason people got Marlboro Miles or start heroin.</p>
+            <p>I appreciate this chance you are giving me to live in your head. The real estate is so fertile that everything just grows in there. I&rsquo;m sure the rooms are infinite.</p>
+            <p>Here are a few verses to get you started.</p>
+            <div class="story-pull-quote foreword-poem">
+                <p class="poem-title">&ldquo;The Men Under The Sea&rdquo;</p>
+                <p>They lie in quiet desperation,<br>
+                where no one hears the screams in their own heads.</p>
+                <p>Where the quiet voices of self destruction whisper in cold still air.</p>
+                <p><strong>They hold their breath and wait.</strong></p>
+            </div>
         </div>
 
         <!-- =====================
@@ -493,138 +556,43 @@
         <article class="story-body" aria-label="Chapter one: Sex on the Beach">
 
             <p>
-                The drink was a Sex on the Beach. Harold knew this because he had ordered it himself, carefully, syllable by syllable, from a bartender who had the look of a man who had heard everything twice and found none of it interesting. The umbrella was pink. The glass was sweating. Harold had been staring at it for eleven minutes without drinking it, which felt about right for a Tuesday.
+                The sky was clear blue, and it seemed to cover the entire world in a cheery sort of tropical expanse that smelled like a floral hot humid blanket that had been left on the beach much too long.
             </p>
 
             <p>
-                The bar was called The Anchor. It smelled of brine, old wood, and the specific brand of despair that accumulates in places where people come to forget things and end up remembering them harder. A ceiling fan moved the air from one side of the room to the other without improving it. Harold watched it spin and thought, not for the first time that week, that his life had taken a direction he hadn't voted for.
+                Harold tried to remember if &ldquo;Left On The Beach&rdquo; was one of the drinks he ordered. His butler, confused at first, was happy to help Harold work through his issues with mixed drinks in a couples resort by himself. He drank happy things at first like &ldquo;Blue Motorcycles and Pink Panty Pull Downs.&rdquo;
             </p>
 
             <p>
-                He was thirty-one years old, five foot six in shoes, and currently between jobs in the same way that a ship is between ports when it is sitting on the ocean floor. He had come to the coast because a website had told him the saltwater would &ldquo;reset his nervous system.&rdquo; He had arrived to find grey skies, a closed seafood restaurant, and a beach that smelled of low tide and poor decisions.
-            </p>
-
-            <div class="scene-break" aria-hidden="true">&bull; &bull; &bull;</div>
-
-            <p>
-                The man who sat down next to Harold had hair the colour of gunmetal and a beard that had clearly made its own decisions years ago. His arms rested on the bar like two lengths of rigging cable. He was wearing a tan work shirt with the sleeves rolled to the elbow, revealing tattoos that seemed to tell a very long story in a language Harold didn&rsquo;t speak. He smelled of diesel and something older than diesel.
+                He flipped through her Facebook and stopped on the last one that was taken when they were together. They were smiling. He wondered if this was a real smile or a fake one. Was it obvious to everyone but him?
             </p>
 
             <p>
-                &ldquo;You going to drink that?&rdquo; the man said, nodding at the Sex on the Beach.
+                Harold could feel his body trying to tell him something, but as the waiter got tired of bringing him alcohol; the drinks seemed to get less like sweet fruit and more like liquor poured in angrily and cussed at in heavy patois. His arms and legs were so heavy. He felt that his body would sit under the clear crystal tropical sky and bake forever. He wondered if one could will themselves out of existence without all the mess.
             </p>
 
             <p>
-                Harold looked at it. &ldquo;Eventually.&rdquo;
+                He felt his stomach spasm around its collection of liquors, fried foods, and an antidepressant that died in vain. He felt it all sort of lurch up against his best efforts to hold it back. It was at this point that his bladder finally broke free, and he felt a sort of humiliating warm relief run around his bathing suit.
             </p>
 
             <p>
-                &ldquo;Man who drinks eventually isn&rsquo;t a man with plans.&rdquo;
+                He looked at the ocean, which was smooth, like a freshly drawn bath. The resort had a giant yellow duck just off the end of the pier, and it bobbed like a toddler&rsquo;s toy in the ocean.
             </p>
 
             <p>
-                &ldquo;That&rsquo;s accurate,&rdquo; Harold said.
+                And then he stood up.
             </p>
 
             <p>
-                The man ordered something brown without naming it, drank half of it, and set the glass down with the care of someone setting a fuse. He looked at Harold the way people look at useful objects they haven&rsquo;t decided what to do with yet.
+                The nausea was enough to send him lurching for the pier. He thought if he could just get his head in the water, his thoughts might clear.
             </p>
 
             <p>
-                &ldquo;I&rsquo;m Cutter,&rdquo; he said. &ldquo;I run a boat.&rdquo;
+                He could feel his stomach make a final effort to lunge its contents up and out of itself as he staggered toward the pier. He bent over, his mouth yawning open; and vomited in colors. He could see black spots gather around the corners of his eyes before the world sort of went black.
             </p>
 
             <p>
-                &ldquo;Harold. I don&rsquo;t.&rdquo;
-            </p>
-
-            <!-- Crew portrait card -->
-            <div class="crew-card">
-                <img src="/images/harold-crew.png" alt="The crew of the Sea Rat — Harold in swim trunks flanked by Cutter, Dutch, and Remy in front of the submarine" width="1024" height="1024" loading="lazy">
-                <div class="crew-card-body">
-                    <p class="crew-card-title">The Crew of the Sea Rat</p>
-                    <p>Left to right: Dutch, Harold, Cutter &amp; Remy. Photographed approximately forty minutes before things went badly wrong.</p>
-                </div>
-            </div>
-
-            <p>
-                The other two arrived shortly after, as if on cue, which Harold would later learn they were. The first was a lean, red-haired man named Remy who had the kind of face that suggested he had lost arguments with his own decisions and bore the marks of it. He wore a white vest and the expression of someone who had been awake too long on purpose. The second was large, blond, and slow in the specific way of someone who was not slow at all but had learned that the world moved faster when it thought you were stupid. He introduced himself as Dutch and was already holding a cigar he hadn&rsquo;t lit, as if he was waiting for a more appropriate disaster to light it at.
-            </p>
-
-            <div class="story-pull-quote">
-                <p>&ldquo;We need a fourth,&rdquo; Cutter said. &ldquo;Someone who doesn&rsquo;t know enough to say no. You have that quality in abundance.&rdquo;</p>
-            </div>
-
-            <p>
-                Harold looked around the bar as though a better fourth might materialise from somewhere. The bartender had his back turned. A television in the corner was showing a weather forecast for somewhere else. Outside, the grey sea pushed at the grey shore with all the enthusiasm of a bureaucrat processing forms.
-            </p>
-
-            <p>
-                &ldquo;What kind of boat?&rdquo; Harold asked.
-            </p>
-
-            <p>
-                Cutter finished his drink. &ldquo;The kind that goes under.&rdquo;
-            </p>
-
-            <div class="scene-break" aria-hidden="true">&bull; &bull; &bull;</div>
-
-            <!-- Chapter 1 banner image -->
-            <div class="story-img-block">
-                <img src="/images/harold-ch1-banner.png" alt="Harold facing the Sea Rat submarine on a rocky shore at sunset, with Cutter gesturing toward the vessel" width="1792" height="768" loading="lazy">
-                <p class="story-img-caption">The Sea Rat. Forty-three metres of bad intentions and questionable maintenance.</p>
-            </div>
-
-            <p>
-                The submarine was called the Sea Rat, which Harold felt was doing a lot of honest work as a name. It sat in a sheltered cove about a mile down the coast, half-beached on a rock shelf, illuminated by a searchlight that had no business being operational. It was grey, dented, and bore a crest on its conning tower that looked like something a secret society would design if the secret society had very poor graphic design resources and a fondness for rats.
-            </p>
-
-            <p>
-                &ldquo;Is it legal?&rdquo; Harold asked.
-            </p>
-
-            <p>
-                &ldquo;That&rsquo;s a very broad question,&rdquo; Remy said.
-            </p>
-
-            <p>
-                &ldquo;It&rsquo;s a yes or no question.&rdquo;
-            </p>
-
-            <p>
-                Remy considered this. &ldquo;It&rsquo;s a spectrum question dressed up as a yes or no question. Which is the worst kind.&rdquo;
-            </p>
-
-            <p>
-                Harold stood on the rocks in his swim trunks — he hadn&rsquo;t had time to change, or been given time, it was hard to say — and looked at the submarine and thought about the Sex on the Beach he had left on the bar. He had paid for it. That was maybe the worst part. He had paid four euros fifty for a drink he had never drunk, and now he was standing on a wet rock at dusk being recruited by three men whose combined legal standing he estimated at approximately negative.
-            </p>
-
-            <p>
-                Cutter put a hand on his shoulder. It was a large hand, and it landed with the weight of a decision already made.
-            </p>
-
-            <p>
-                &ldquo;There&rsquo;s something in the water,&rdquo; Cutter said quietly, staring at the submarine the way men stare at things they have staked everything on. &ldquo;Something that doesn&rsquo;t belong to anyone. Which means it belongs to whoever finds it first.&rdquo;
-            </p>
-
-            <p>
-                &ldquo;What kind of something?&rdquo;
-            </p>
-
-            <p>
-                &ldquo;The kind,&rdquo; said Dutch, finally lighting his cigar, &ldquo;that people have been looking for a very long time.&rdquo;
-            </p>
-
-            <p>
-                The sea moved against the rocks. The submarine groaned like a building settling. Harold looked at the three of them — weathered, certain, slightly terrifying — and then at himself: thirty-one, between everything, holding nothing.
-            </p>
-
-            <p>
-                He got on the submarine.
-            </p>
-
-            <p>
-                He would think about why, later. At length. In the dark, in a bunk that smelled of rust and someone else&rsquo;s past, listening to the ocean pressing in from all sides, he would think about why. And the closest he would ever come to an answer was this: because the drink had been called Sex on the Beach, and he had ordered it alone, and he had not drunk it, and sometimes that is enough.
+                He could feel himself falling.
             </p>
 
             <!-- Tags -->
