@@ -307,10 +307,19 @@
         }
 
         /* Chapter opening illustration */
-        .chapter-illustration {
-            max-width: 640px;
-            margin: 0 auto var(--space-10);
+        .chapter-illustration-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
             padding: 0 var(--space-6);
+            margin-bottom: var(--space-10);
+            box-sizing: border-box;
+        }
+
+        .chapter-illustration {
+            width: 100%;
+            max-width: 560px;
+            flex-shrink: 0;
             text-align: center;
         }
 
@@ -318,8 +327,6 @@
             width: 100%;
             height: auto;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
             border-radius: var(--radius-lg);
             border: 1px solid rgba(255, 45, 206, 0.18);
             box-shadow:
@@ -340,7 +347,7 @@
         .chapter-illustration-caption::first-letter { all: unset; }
 
         @media (max-width: 768px) {
-            .chapter-illustration { padding: 0 var(--space-4); }
+            .chapter-illustration-wrap { padding: 0 var(--space-4); }
         }
 
         /* Crew portrait sidebar card */
@@ -467,6 +474,7 @@
         <!-- =====================
              CHAPTER ILLUSTRATION
              ===================== -->
+        <div class="chapter-illustration-wrap">
         <div class="chapter-illustration" aria-label="Harold passed out on the beach, surrounded by empty bottles and cocktail glasses">
             <img
                 src="/images/harold-passed-out.png"
@@ -476,6 +484,7 @@
                 loading="lazy"
             >
             <p class="chapter-illustration-caption">Harold, approximately four hours before he found himself on a submarine.</p>
+        </div>
         </div>
 
         <!-- =====================
