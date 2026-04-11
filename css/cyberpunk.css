@@ -1222,6 +1222,13 @@ blockquote {
 .disc-card-img--comics { background: linear-gradient(135deg, #0a1a1a 0%, #0a2626 50%, #0d3333 100%); }
 .disc-card-img--essays { background: linear-gradient(135deg, #1a0d00 0%, #2e1500 50%, #3d1f00 100%); }
 
+/* Image-based disc-card thumbnail — covers the full area, no repeat */
+.disc-card-img--photo {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
 /* Animated noise texture overlay on card images */
 .disc-card-img::after {
     content: '';
