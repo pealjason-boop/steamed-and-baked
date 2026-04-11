@@ -332,14 +332,21 @@
     // BOOT SEQUENCE
     // ========================================
 
+    // setupKeyboardShortcuts and setupEasterEgg only attach document-level
+    // keydown listeners and do not depend on the DOM being fully parsed,
+    // but wrapping them inside the DOMContentLoaded guard is safer and
+    // prevents any edge-case race conditions on very fast renders.
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', () => {
+            init();
+            setupKeyboardShortcuts();
+            setupEasterEgg();
+        });
     } else {
         init();
+        setupKeyboardShortcuts();
+        setupEasterEgg();
     }
-
-    setupKeyboardShortcuts();
-    setupEasterEgg();
 
     window.addEventListener('load', logPerformance);
 

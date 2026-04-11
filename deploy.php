@@ -12,7 +12,12 @@
  *   Events:       Just the push event
  */
 
-define('DEPLOY_SECRET', 'sab-deploy-2026');
+// SECURITY: Load webhook secret from environment variable or server config.
+// On DreamHost: set DEPLOY_SECRET in .htaccess via SetEnv, or store in a
+// file outside the document root (e.g. /home/jpsteamed/.deploy-secret).
+// Example .htaccess line (outside of git):
+//   SetEnv DEPLOY_SECRET "your-real-secret-here"
+define('DEPLOY_SECRET', getenv('DEPLOY_SECRET') ?: 'CHANGE_ME_IN_SERVER_ENV');
 define('REPO_PATH',     '/home/jpsteamed/steamedandbaked.net');
 define('LOG_FILE',      '/home/jpsteamed/steamedandbaked.net/deploy.log');
 
