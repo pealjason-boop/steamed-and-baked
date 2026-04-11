@@ -192,12 +192,9 @@ The homepage (index.html) has a "LATEST DISCOVERIES" section with 4 featured car
 
 When a new piece of content is added, update the homepage by replacing the oldest discovery card with a new one pointing to the new content. Keep exactly 4 cards total.
 
-Homepage card format:
-<article class="disc-card disc-card--purple">   ← color variants: disc-card--purple, disc-card--pink, disc-card--teal
-    <div class="disc-card-img">
-        <img src="IMAGE_URL" alt="DESCRIPTIVE ALT TEXT" loading="lazy" width="600" height="160"
-             onerror="this.parentElement.style.background='linear-gradient(135deg,#1a1a2e,#16213e)'">
-    </div>
+Homepage card format (CSS-gradient thumbnails, no external images required):
+<article class="disc-card disc-card--purple">
+    <div class="disc-card-img disc-card-img--story" role="img" aria-label="DESCRIPTIVE ALT TEXT"></div>
     <div class="disc-card-body">
         <h3 class="disc-card-title">TITLE HERE</h3>
         <p class="disc-card-desc">SHORT DESCRIPTION HERE</p>
@@ -207,7 +204,10 @@ Homepage card format:
 
 Button text options: READ STORY / READ POETRY / READ COMIC / READ ESSAY / WATCH VIDEO
 Link options: /fiction.html / /poetry.html / /comics.html / /essays.html / /videos.html
-Color classes: disc-card--purple / disc-card--pink / disc-card--teal (rotate through them)
+Color classes (pick one): disc-card--purple / disc-card--pink / disc-card--teal / disc-card--orange
+Thumbnail classes (pick one): disc-card-img--story / disc-card-img--poetry / disc-card-img--comics / disc-card-img--essays
+
+Note: Thumbnails are pure CSS gradients defined in cyberpunk.css — no image files needed.
 ```
 
 ---

@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
+# Server-side files — not accessible to bots or visitors
 Disallow: /.git/
-Disallow: /.htaccess
+Disallow: /deploy.php
 
 Sitemap: https://steamedandbaked.net/sitemap.xml

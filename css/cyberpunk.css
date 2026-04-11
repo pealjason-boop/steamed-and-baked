@@ -215,7 +215,7 @@ pre {
 
 blockquote {
     border-left: 4px solid var(--neon-magenta);
-    padding-left: var(--space-4);
+    /* padding-left is superseded by the shorthand padding below */
     margin: var(--space-6) 0;
     font-style: italic;
     color: var(--text-secondary);
@@ -1659,4 +1659,24 @@ button:focus-visible {
 .cta-section {
     background: var(--bg-secondary);
     border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ========================================
+   REDUCED MOTION (WCAG 2.1 — 2.3.3)
+   Disable decorative animations for users
+   who prefer reduced motion.
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
 }

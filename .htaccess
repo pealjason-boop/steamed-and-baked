@@ -55,7 +55,9 @@ ErrorDocument 503 /404.html
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 
     # Content Security Policy
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';"
+    # script-src: 'unsafe-inline' removed — all JS is external (/js/main.js).
+    # style-src: 'unsafe-inline' retained for inline style="" attributes used in content cards.
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self';"
 
     # Remove server fingerprint headers
     Header always unset Server
